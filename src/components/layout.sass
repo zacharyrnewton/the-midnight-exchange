@@ -1,7 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap')
+
+$black: #000000
+$white: #FFFFFF
+
+$dark: #0F0F0F
+$light: #EBE1CE
+
+$color1: #C60B0B
+$color2: #1113B5
+$color3: #CD6209
+
 html
-  font-family: sans-serif
+  font-family: 'Open Sans', -apple-system, sans-serif
+  font-size: 100%
+  font-weight: 400
   -ms-text-size-adjust: 100%
   -webkit-text-size-adjust: 100%
+  background: $dark
+  color: $light
 
 body
   margin: 0
@@ -40,6 +56,8 @@ template
   display: none
 
 a
+  color: $light
+  text-decoration: none
   background-color: transparent
   -webkit-text-decoration-skip: objects
 
@@ -66,15 +84,9 @@ h1
 
 mark
   background-color: #ff0
-  color: #000
-
-small
-  font-size: 80%
 
 sub,
 sup
-  font-size: 75%
-  line-height: 0
   position: relative
   vertical-align: baseline
 
@@ -112,9 +124,6 @@ select,
 textarea
   font: inherit
   margin: 0
-
-optgroup
-  font-weight: 700
 
 button,
 input
@@ -185,7 +194,6 @@ textarea
   font: inherit
 
 html
-  font: 112.5%/1.45em georgia, serif
   box-sizing: border-box
   overflow-y: scroll
 
@@ -199,9 +207,6 @@ html
   box-sizing: inherit
 
 body
-  color: hsla(0, 0%, 0%, 0.8)
-  font-family: georgia, serif
-  font-weight: normal
   word-wrap: break-word
   font-kerning: normal
   -moz-font-feature-settings: "kern", "liga", "clig", "calt"
@@ -220,101 +225,6 @@ img
   padding-top: 0
   margin-bottom: 1.45rem
 
-h1
-  margin-left: 0
-  margin-right: 0
-  margin-top: 0
-  padding-bottom: 0
-  padding-left: 0
-  padding-right: 0
-  padding-top: 0
-  margin-bottom: 1.45rem
-  color: inherit
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
-  font-weight: bold
-  text-rendering: optimizeLegibility
-  font-size: 2.25rem
-  line-height: 1.1
-
-h2
-  margin-left: 0
-  margin-right: 0
-  margin-top: 0
-  padding-bottom: 0
-  padding-left: 0
-  padding-right: 0
-  padding-top: 0
-  margin-bottom: 1.45rem
-  color: inherit
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
-  font-weight: bold
-  text-rendering: optimizeLegibility
-  font-size: 1.62671rem
-  line-height: 1.1
-
-h3
-  margin-left: 0
-  margin-right: 0
-  margin-top: 0
-  padding-bottom: 0
-  padding-left: 0
-  padding-right: 0
-  padding-top: 0
-  margin-bottom: 1.45rem
-  color: inherit
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
-  font-weight: bold
-  text-rendering: optimizeLegibility
-  font-size: 1.38316rem
-  line-height: 1.1
-
-h4
-  margin-left: 0
-  margin-right: 0
-  margin-top: 0
-  padding-bottom: 0
-  padding-left: 0
-  padding-right: 0
-  padding-top: 0
-  margin-bottom: 1.45rem
-  color: inherit
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
-  font-weight: bold
-  text-rendering: optimizeLegibility
-  font-size: 1rem
-  line-height: 1.1
-
-h5
-  margin-left: 0
-  margin-right: 0
-  margin-top: 0
-  padding-bottom: 0
-  padding-left: 0
-  padding-right: 0
-  padding-top: 0
-  margin-bottom: 1.45rem
-  color: inherit
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
-  font-weight: bold
-  text-rendering: optimizeLegibility
-  font-size: 0.85028rem
-  line-height: 1.1
-
-h6
-  margin-left: 0
-  margin-right: 0
-  margin-top: 0
-  padding-bottom: 0
-  padding-left: 0
-  padding-right: 0
-  padding-top: 0
-  margin-bottom: 1.45rem
-  color: inherit
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
-  font-weight: bold
-  text-rendering: optimizeLegibility
-  font-size: 0.78405rem
-  line-height: 1.1
 
 hgroup
   margin-left: 0
@@ -584,9 +494,7 @@ td:last-child
 
 tt,
 code
-  background-color: hsla(0, 0%, 0%, 0.04)
   border-radius: 3px
-  font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono", "Liberation Mono", Menlo, Courier, monospace
   padding: 0
   padding-top: 0.2em
   padding-bottom: 0.2em
@@ -608,6 +516,52 @@ pre tt:before,
 pre tt:after
   content: ""
 
-@media only screen and (max-width: 480px)
-  html
-    font-size: 100%
+
+
+// General
+// box-shadow: -4px 5px $color2, 4px -5px $color1
+a.icon-link
+  font-size: 0
+  color: $white
+  &:hover
+    svg
+      path, circle, rect
+        fill: $white
+
+// Navigation
+nav
+  display: flex
+  grid-area: navigation
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  width: 100%
+  padding: 58px 64px 58px 64px
+  a
+    font-size: 0
+    &:hover
+      svg
+        path, circle, rect
+          fill: $white
+  a.social-link
+    margin-left: 8px
+
+// Podcast Links
+.podcast-links
+  display: flex
+  grid-area: podcast-links
+  align-items: center
+  justify-content: center
+  margin: auto
+  a
+    margin: auto 8px
+
+
+@media screen and(max-width: 800px)
+  nav
+    padding: 32px 32px 32px 32px
+
+
+@media screen and(max-width: 380px)
+  nav
+    padding: 32px 16px 32px 16px

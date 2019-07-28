@@ -8,9 +8,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
 import Navigation from "./navigation"
 import PodcastLinks from "./podcast-links"
+import Particles from 'react-particles-js'
 import "./layout.sass"
 
 const Layout = ({ children }) => {
@@ -40,6 +40,120 @@ const Layout = ({ children }) => {
           </svg>
         </div>
         <PodcastLinks />
+        <div className="particles-wrapper">
+          <Particles
+            params=
+            {{
+              "particles": {
+                "number": {
+                  "value": 256,
+                  "density": {
+                    "enable": true,
+                    "value_area": 236
+                  }
+                },
+                "color": {
+                  "value": "#ffffff"
+                },
+                "shape": {
+                  "type": "circle",
+                  "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                  },
+                  "polygon": {
+                    "nb_sides": 5
+                  },
+                  "image": {
+                    "src": "img/github.svg",
+                    "width": 100,
+                    "height": 100
+                  }
+                },
+                "opacity": {
+                  "value": 1,
+                  "random": true,
+                  "anim": {
+                    "enable": true,
+                    "speed": 0.5,
+                    "opacity_min": 0.25,
+                    "sync": false
+                  }
+                },
+                "size": {
+                  "value": 1,
+                  "random": true,
+                  "anim": {
+                    "enable": false,
+                    "speed": 0.5,
+                    "size_min": 0.5,
+                    "sync": false
+                  }
+                },
+                "line_linked": {
+                  "enable": false,
+                  "distance": 150,
+                  "color": "#ffffff",
+                  "opacity": 0.4,
+                  "width": 1
+                },
+                "move": {
+                  "enable": true,
+                  "speed": 0.1,
+                  "direction": "bottom",
+                  "random": true,
+                  "straight": false,
+                  "out_mode": "out",
+                  "bounce": false,
+                  "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 600
+                  }
+                }
+              },
+              "interactivity": {
+                "detect_on": "window",
+                "events": {
+                  "onhover": {
+                    "enable": false,
+                    "mode": "repulse"
+                  },
+                  "onclick": {
+                    "enable": false,
+                    "mode": "bubble"
+                  },
+                  "resize": true
+                },
+                "modes": {
+                  "grab": {
+                    "distance": 400,
+                    "line_linked": {
+                      "opacity": 1
+                    }
+                  },
+                  "bubble": {
+                    "distance": 50,
+                    "size": 0,
+                    "duration": 5,
+                    "opacity": 0.15,
+                    "speed": 3
+                  },
+                  "repulse": {
+                    "distance": 20,
+                    "duration": 0.4
+                  },
+                  "push": {
+                    "particles_nb": 4
+                  },
+                  "remove": {
+                    "particles_nb": 2
+                  }
+                }
+              },
+              "retina_detect": true
+            }}/>
+          </div>
       </header>
       <main>{children}</main>
     </>

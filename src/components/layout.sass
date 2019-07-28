@@ -626,11 +626,12 @@ header.hero
   width: 100vw
   height: 100vh
   display: grid
-  position: relative
-  z-index: 1
   grid-template-columns: 1fr
   grid-template-rows: auto 1fr auto
   grid-template-areas: "navigation" "header-content" "podcast-links"
+  position: relative
+  z-index: 1
+  overflow: hidden
   &::before, &::after
     content: ""
     border-radius: 100%

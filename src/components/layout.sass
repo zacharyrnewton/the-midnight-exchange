@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap')
 
+// Variables
 $black: #000000
 $white: #FFFFFF
 
@@ -9,6 +10,12 @@ $light: #EBE1CE
 $color1: #C60B0B
 $color2: #1113B5
 $color3: #CD6209
+
+
+*::selection
+  // background-color: transparentize($color1, .75)
+  background-color: $color1
+  color: $light
 
 html
   font-family: 'Open Sans', -apple-system, sans-serif
@@ -517,6 +524,32 @@ pre tt:after
   content: ""
 
 
+// Typography
+
+
+// Animations
+@keyframes grain
+  0%, 100%
+    transform: translate(0, 0)
+  10%
+    transform: translate(-5%, -10%)
+  20%
+    transform: translate(-15%, 5%)
+  30%
+    transform: translate(7%, -25%)
+  40%
+    transform: translate(-5%, 25%)
+  50%
+    transform: translate(-15%, 10%)
+  60%
+    transform: translate(15%, 0%)
+  70%
+    transform: translate(0%, 15%)
+  80%
+    transform: translate(3%, 35%)
+  90%
+    transform: translate(-10%, 10%)
+
 
 // General
 // box-shadow: -4px 5px $color2, 4px -5px $color1
@@ -528,9 +561,78 @@ a.icon-link
       path, circle, rect
         fill: $white
 
+
+// Header
+header.hero
+  width: 100vw
+  height: 100vh
+  display: grid
+  position: relative
+  z-index: 1
+  grid-template-columns: 1fr
+  grid-template-rows: auto 1fr auto
+  grid-template-areas: "navigation" "header-content" "podcast-links"
+  &::after
+    display: block
+    position: fixed
+    content: ""
+    height: 300%
+    left: -50%
+    position: fixed
+    top: -100%
+    width: 300%
+    z-index: 2
+    background-image: url("../images/grain.jpg")
+    background-size: 100px 100px
+    background-repeat: repeat
+    background-color: $dark
+    background-blend-mode: overlay
+    animation: grain 8s steps(10) infinite
+.header-content
+  display: grid
+  position: relative
+  z-index: 3
+  grid-template-columns: auto auto
+  grid-area: header-content
+  align-items: center
+  width: 100%
+  margin: auto
+  padding: 0 64px
+  max-width: 1464px
+  .header-text
+    width: 100%
+    max-width: 800px
+    h1
+      font-size: 4rem
+      font-weight: 800
+      color: $light
+      letter-spacing: -0.022em
+      line-height: 0.9375em
+      margin: 0
+      padding: 0
+      span
+        color: transparentize($light, 0.9)
+    p
+      font-size: 1.375rem
+      line-height: 2em
+      margin: 0
+      padding: 32px 0 0 0
+      a
+        color: $color1
+        font-weight: 700
+        font-style: italic
+        &:hover
+          text-decoration: underline
+  svg
+    justify-self: end
+    margin-left: 64px
+
+
 // Navigation
 nav
   display: flex
+  position: relative
+  z-index: 3
   grid-area: navigation
   flex-direction: row
   justify-content: space-between
@@ -549,19 +651,35 @@ nav
 // Podcast Links
 .podcast-links
   display: flex
+  position: relative
+  z-index: 3
   grid-area: podcast-links
   align-items: center
   justify-content: center
-  margin: auto
+  margin: 64px auto
   a
     margin: auto 8px
 
+@media screen and(max-width: 1050px)
+  .header-content
+    .header-text
+      h1
+        font-size: 2rem
+      p
+        font-size: 1rem
+    svg
+      width: 200px
 
 @media screen and(max-width: 800px)
   nav
     padding: 32px 32px 32px 32px
-
+  .header-content
+    padding: 0 32px
+    svg
+      display: none
 
 @media screen and(max-width: 380px)
   nav
     padding: 32px 16px 32px 16px
+  .header-content
+    padding: 0 16px

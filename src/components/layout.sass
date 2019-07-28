@@ -13,7 +13,6 @@ $color3: #CD6209
 
 
 *::selection
-  // background-color: transparentize($color1, .75)
   background-color: $color1
   color: $light
 
@@ -552,7 +551,11 @@ pre tt:after
 
 
 // General
-// box-shadow: -4px 5px $color2, 4px -5px $color1
+a
+  position: relative
+  &:hover
+    color: $white
+    filter: drop-shadow(-4px 4px 0 $color2) drop-shadow(4px -4px 0 $color1)
 a.icon-link
   font-size: 0
   color: $white
@@ -621,8 +624,9 @@ header.hero
         color: $color1
         font-weight: 700
         font-style: italic
+        text-decoration: underline
         &:hover
-          text-decoration: underline
+          color: $white
   svg
     justify-self: end
     margin-left: 64px

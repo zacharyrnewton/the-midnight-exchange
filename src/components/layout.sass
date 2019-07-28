@@ -567,12 +567,26 @@ pre tt:after
   90%
     transform: translate(-10%, 10%)
 
+@keyframes glitch
+  0%
+    filter: drop-shadow(0px 0px 0 $color2) drop-shadow(0px -0px 0 $color1)
+  20%
+    filter: drop-shadow(-4px 4px 0 $color2) drop-shadow(4px -4px 0 $color1)
+  40%
+    filter: drop-shadow(4px -4px 0 $color2) drop-shadow(-4px 4px 0 $color1)
+  60%
+    filter: drop-shadow(0px 0px 0 $color2) drop-shadow(0px 0px 0 $color1)
+  80%
+    filter: drop-shadow(4px -4px 0 $color2) drop-shadow(-4px 4px 0 $color1)
+  100%
+    filter: drop-shadow(-4px 4px 0 $color2) drop-shadow(4px -4px 0 $color1)
 
 // General
 a
   position: relative
   &:hover
     color: $white
+    animation: glitch 0.075s steps(5) forwards 2
     filter: drop-shadow(-4px 4px 0 $color2) drop-shadow(4px -4px 0 $color1)
 a.icon-link
   font-size: 0

@@ -15,7 +15,7 @@ const Navigation = ({ siteTitle }) => (
       </svg>
     </Link>
     <div>
-      <a href="https://www.instagram.com/themidnightexchange/" target="_blank" rel="noopener noreferrer" class="social-link icon-link">Instagram
+      <a href="https://www.instagram.com/themidnightexchange/" target="_blank" rel="noopener noreferrer" className="social-link icon-link">Instagram
         <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
           <g transform="translate(-1714 -58)">
             <circle cx="22" cy="22" r="22" transform="translate(1714 58)" fill="#ebe1ce" opacity="0"/>
@@ -23,7 +23,7 @@ const Navigation = ({ siteTitle }) => (
           </g>
         </svg>
       </a>
-      <a href="https://twitter.com/THEMEpodcast" target="_blank" rel="noopener noreferrer" class="social-link icon-link">Twitter
+      <a href="https://twitter.com/THEMEpodcast" target="_blank" rel="noopener noreferrer" className="social-link icon-link">Twitter
         <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
           <g transform="translate(-1766 -58)">
             <circle cx="22" cy="22" r="22" transform="translate(1766 58)" fill="#ebe1ce" opacity="0"/>
@@ -31,7 +31,7 @@ const Navigation = ({ siteTitle }) => (
           </g>
         </svg>
       </a>
-      <a href="https://www.facebook.com/themidnightexchange" target="_blank" rel="noopener noreferrer" class="social-link icon-link">Facebook
+      <a href="https://www.facebook.com/themidnightexchange" target="_blank" rel="noopener noreferrer" className="social-link icon-link">Facebook
         <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
           <g transform="translate(-1818 -58)">
             <circle cx="22" cy="22" r="22" transform="translate(1818 58)" fill="#ebe1ce" opacity="0"/>

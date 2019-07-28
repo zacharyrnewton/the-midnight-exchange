@@ -26,10 +26,10 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <header class="hero">
+      <header className="hero">
         <Navigation siteTitle={data.site.siteMetadata.title} />
-        <div class="header-content">
-          <div class="header-text">
+        <div className="header-content">
+          <div className="header-text">
             <h1><span>The</span><br />Midnight Exchange</h1>
             <p>It’s that feeling you get when you’re out with friends, talking over drinks in that dimly lit lounge with the good music. It’s about approaching life with a sense of curiosity and expectation; diving into any subject that gets your attention. It’s about spending time, having conversations you’ll never forget. <br />This—is The Midnight Exchange. <br />Hosted by: <a href="https://www.mbusto.com/">Mario</a> & <a href="https://zacharynewton.me/">Zachary</a></p>
           </div>

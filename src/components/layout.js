@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
         <div className="header-content">
           <div className="header-text">
             <h1><span>The</span><br />Midnight Exchange</h1>
-            <p>It’s that feeling you get when you’re out with friends, talking over drinks in that dimly lit lounge with the good music. It’s about approaching life with a sense of curiosity and expectation; diving into any subject that gets your attention. It’s about spending time, having conversations you’ll never forget. <br />This—is The Midnight Exchange. <br />Hosted by: <a href="https://www.mbusto.com/">Mario</a> & <a href="https://zacharynewton.me/">Zachary</a></p>
+            <p>It’s that at ease feeling you get when you’re out with friends, talking over drinks in that dimly lit lounge with the good music. It’s about approaching life with a sense of curiosity and expectation; diving into any subject that gets your attention. It’s about spending time, having conversations you’ll never forget. This—is The Midnight Exchange. <br />Hosted by: <a href="https://www.mbusto.com/">Mario</a> & <a href="https://zacharynewton.me/">Zachary</a></p>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" width="240" height="384" viewBox="0 0 240 384">
             <g transform="translate(-1352 -348)">
@@ -46,10 +46,10 @@ const Layout = ({ children }) => {
             {{
               "particles": {
                 "number": {
-                  "value": 256,
+                  "value": 175,
                   "density": {
                     "enable": true,
-                    "value_area": 236
+                    "value_area": 800
                   }
                 },
                 "color": {

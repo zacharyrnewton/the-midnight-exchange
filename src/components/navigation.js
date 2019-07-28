@@ -14,7 +14,7 @@ const Navigation = ({ siteTitle }) => (
         <rect width="6.4" height="32" transform="translate(25.6)" fill="#ebe1ce"/>
       </svg>
     </Link>
-    <div>
+    <div className="nav-links">
       <a href="https://www.instagram.com/themidnightexchange/" target="_blank" rel="noopener noreferrer" className="social-link icon-link">Instagram
         <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
           <g transform="translate(-1714 -58)">

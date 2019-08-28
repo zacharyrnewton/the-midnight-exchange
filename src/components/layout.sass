@@ -805,13 +805,15 @@ nav
     height: 46px
     margin: auto 8px
 
-@media screen and(max-width: 1050px)
+@media screen and(max-width: 1280px)
   .header-content, .error-header-content
     .header-text, .error-header-text
+      max-width: 600px
       h1
         font-size: 2rem
       p
         font-size: 1rem
+
     svg
       width: 200px
 
@@ -863,6 +865,8 @@ nav
         border-radius: 8px 8px 0 0
       &:last-of-type
         border-radius: 0 0 8px 8px
+      &:only-of-type
+        border-radius: 8px
     button
       border-radius: 8px
       background: $color3

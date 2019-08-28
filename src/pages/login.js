@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
   <AdminLayout>
-    <SEO title="Home" />
+    <SEO title="Login" />
     <h1>Log In</h1>
     <form className="login">
       <input type="email" name="email" placeholder="Email" required="{true}"/>

@@ -1,6 +1,6 @@
 import { Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
-import React, { Component } from "react"
+import React from "react"
 
 // Keyboard Shortcuts
 if (typeof document !== 'undefined') {

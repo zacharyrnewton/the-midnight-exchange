@@ -26,12 +26,8 @@ const AdminLayout = ({ children }) => {
     <>
       <header>
         <Navigation />
-        <div className="error-header-content">
-          <div className="header-text">
-            <div className="login-wrapper">
-              <main>{children}</main>
-            </div>
-          </div>
+        <div className="login-wrapper">
+          <main>{children}</main>
         </div>
       </header>
     </>

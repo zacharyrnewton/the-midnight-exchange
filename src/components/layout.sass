@@ -719,7 +719,6 @@ header.hero
   align-items: center
   width: 100%
   margin: auto
-  padding: 32px 64px
   max-width: 1464px
   .error-header-text
     width: 100%
@@ -798,8 +797,8 @@ nav
     margin: auto 8px
 
 @media screen and(max-width: 1050px)
-  .header-content, .error-header-text
-    .header-text
+  .header-content, .error-header-content
+    .header-text, .error-header-text
       h1
         font-size: 2rem
       p
@@ -810,7 +809,7 @@ nav
 @media screen and(max-width: 800px)
   nav
     padding: 32px 32px 32px 32px
-  .header-content, .error-header-text
+  .header-content, .error-header-content
     padding: 0 32px
     svg
       display: none
@@ -818,5 +817,5 @@ nav
 @media screen and(max-width: 380px)
   nav
     padding: 32px 16px 32px 16px
-  .header-content, .error-header-text
+  .header-content, .error-header-content
     padding: 0 16px

@@ -13,7 +13,7 @@ import PodcastLinks from "./podcast-links"
 import Particles from 'react-particles-js'
 import "./layout.sass"
 
-const Layout = ({ children }) => {
+const IndexLayout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -160,8 +160,8 @@ const Layout = ({ children }) => {
   )
 }
 
-Layout.propTypes = {
+IndexLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default IndexLayout

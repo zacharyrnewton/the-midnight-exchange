@@ -1,15 +1,17 @@
 import { Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { Component } from "react"
 
 // Keyboard Shortcuts
-// document.addEventListener('keydown', function(e) {console.log(e.key, e.keyCode)});
-document.addEventListener('keydown', (e) => {
-  if (e.keyCode === 27) {
-   // console.log("You have pressed ESC!");
-   navigate("/404/");
- }
-});
+if (typeof document !== 'undefined') {
+  // document.addEventListener('keydown', function(e) {console.log(e.key, e.keyCode)});
+  document.addEventListener('keydown', (e) => {
+    if (e.keyCode === 27) {
+     // console.log("You have pressed ESC!");
+     navigate("/404/");
+   }
+  });
+};
 
 const Navigation = ({ siteTitle }) => (
   <nav>

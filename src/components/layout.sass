@@ -529,9 +529,11 @@ pre tt:after
 // Animations
 @keyframes fade-in
   0%
-    opacity: 0
+    filter: opacity(0)
+    transform: perspective(100px) translateZ(2.5px)
   100%
-    opacity: 1
+    filter: opacity(1)
+    transform: perspective(100px) translateZ(0px)
 
 @keyframes top-side-to-side
   0%
@@ -632,8 +634,7 @@ a.icon-link
     right: 0
     bottom: 0
     left: 0
-    opacity: 0
-    animation: fade-in 8s ease-in-out 0s normal 1 forwards
+    animation: fade-in 8s ease-in-out 0s 1 forwards normal
 
 // Header
 header.hero

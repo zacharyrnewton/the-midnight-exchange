@@ -1,5 +1,4 @@
 import React from "react"
-
 import IndexLayout from "../components/index-layout"
 import SEO from "../components/seo"
 

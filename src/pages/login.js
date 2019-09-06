@@ -7,41 +7,40 @@ import 'firebase/auth';
 
 
 
-  // firebase.auth().signOut();
+// firebase.auth().signOut();
 
-  // Login
-  function login(event) {
-    event.stopPropagation();
-    event.preventDefault();
-    if(typeof window !== "undefined") {
-      // Get Email and Password
-      // const txtEmail = document.getElementById('txtEmail');
-      // const txtPassword = document.getElementById('txtPassword');
-      const email = document.getElementById('txtEmail').value;
-      const pass = document.getElementById('txtPassword').value;
-      // Sign in
-      const promise = firebase.auth().signInWithEmailAndPassword(email, pass);
-      promise.catch(e => console.log(e.message));
-    }
-  };
+// Login
+function login(event) {
+  event.stopPropagation();
+  event.preventDefault();
+  // Get Email and Password
+  // const txtEmail = document.getElementById('txtEmail');
+  // const txtPassword = document.getElementById('txtPassword');
+  const email = document.getElementById('txtEmail').value;
+  const pass = document.getElementById('txtPassword').value;
+  // Sign in
+  const promise = firebase.auth().signInWithEmailAndPassword(email, pass);
+  promise.catch(e => console.log(e.message));
 
-  // Logout
-  // function logout(event) {
-  //   event.stopPropagation();
-  //   event.preventDefault();
-  //   firebase.auth().signOut();
-  // };
-if(typeof window !== "undefined") {
-  firebase.auth().onAuthStateChanged(firebaseUser => {
-    if(firebaseUser) {
-      console.log(firebaseUser);
-      navigate("/admin/");
-    } else {
-      console.log('not logged in');
-      // navigate("/");
-    }
-  });
-}
+};
+
+// Logout
+// function logout(event) {
+//   event.stopPropagation();
+//   event.preventDefault();
+//   firebase.auth().signOut();
+// };
+
+firebase.auth().onAuthStateChanged(firebaseUser => {
+  if(firebaseUser) {
+    console.log(firebaseUser);
+    navigate("/admin/");
+  } else {
+    console.log('not logged in');
+    // navigate("/");
+  }
+});
+
 
 
 const LoginPage = () => (

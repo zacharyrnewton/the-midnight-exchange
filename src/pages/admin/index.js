@@ -5,15 +5,13 @@ import SEO from "../../components/seo"
 import firebase from "../../services/firebase-config"
 import 'firebase/auth';
 
-  // Logout
-  function logout(event) {
-    event.stopPropagation();
-    event.preventDefault();
-    if(typeof window !== "undefined") {
-      firebase.auth().signOut();
-    }
-    navigate("/login/");
-  };
+// Logout
+function logout(event) {
+  event.stopPropagation();
+  event.preventDefault();
+  firebase.auth().signOut();
+  navigate("/login/");
+};
 
 const IndexPage = () => (
   <AdminLayout>

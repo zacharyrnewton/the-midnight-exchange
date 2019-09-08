@@ -38,7 +38,7 @@ if (typeof window !== `undefined`) {
       navigate("/admin/");
     } else {
       console.log('not logged in');
-      navigate("/");
+      // navigate("/");
     }
   });
 };

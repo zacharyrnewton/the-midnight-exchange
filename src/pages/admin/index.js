@@ -9,8 +9,11 @@ import 'firebase/auth';
 function logout(event) {
   event.stopPropagation();
   event.preventDefault();
+  const email = firebase.auth().currentUser.email;
+  alert(email + " is logged out.");
   firebase.auth().signOut();
   navigate("/login/");
+
 };
 
 const IndexPage = () => (

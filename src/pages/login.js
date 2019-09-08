@@ -21,7 +21,6 @@ function login(event) {
   // Sign in
   const promise = firebase.auth().signInWithEmailAndPassword(email, pass);
   promise.catch(e => console.log(e.message));
-
 };
 
 // Logout
@@ -31,15 +30,19 @@ function login(event) {
 //   firebase.auth().signOut();
 // };
 
-firebase.auth().onAuthStateChanged(firebaseUser => {
-  if(firebaseUser) {
-    console.log(firebaseUser);
-    navigate("/admin/");
-  } else {
-    console.log('not logged in');
-    // navigate("/");
-  }
-});
+if (typeof window !== `undefined`) {
+  firebase.auth().onAuthStateChanged(firebaseUser => {
+    if(firebaseUser) {
+      console.log(firebaseUser.email);
+      console.log(firebaseUser);
+      navigate("/admin/");
+    } else {
+      console.log('not logged in');
+      navigate("/");
+    }
+  });
+};
+
 
 
 

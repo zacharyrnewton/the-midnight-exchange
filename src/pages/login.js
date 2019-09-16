@@ -3,7 +3,7 @@ import { navigate } from "gatsby"
 import Layout from "../components/default-layout"
 import SEO from "../components/seo"
 import firebase from "../services/firebase-config"
-import 'firebase/auth';
+// import 'firebase/auth';
 
 // Login
 function login(event) {

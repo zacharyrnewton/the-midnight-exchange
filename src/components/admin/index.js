@@ -1,9 +1,9 @@
 import React from "react"
-import Layout from "../../components/default-layout"
+import Layout from "../default-layout"
 import { navigate } from "gatsby"
-import SEO from "../../components/seo"
+import SEO from "../seo"
 import firebase from "../../services/firebase-config"
-import 'firebase/auth';
+// import 'firebase/auth';
 
 // Logout
 function logout(event) {

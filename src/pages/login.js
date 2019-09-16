@@ -1,6 +1,6 @@
 import React from "react"
 import { navigate } from "gatsby"
-import AdminLayout from "../components/admin-layout"
+import Layout from "../components/default-layout"
 import SEO from "../components/seo"
 import firebase from "../services/firebase-config"
 import 'firebase/auth';
@@ -31,15 +31,17 @@ if (typeof window !== `undefined`) {
 };
 
 const LoginPage = () => (
-  <AdminLayout>
+  <Layout>
     <SEO title="Login" />
-    <h1>Log In</h1>
-    <form className="login">
-      <input id="email" type="email" name="email" placeholder="Email" required="{true}"/>
-      <input id="password" type="password" name="password" placeholder="Password" required="{true}"/>
-      <button id="btnLogin" onClick={login}>Log In</button>
-    </form>
-  </AdminLayout>
+    <div className="login-wrapper">
+      <h1>Log In</h1>
+      <form className="login">
+        <input id="email" type="email" name="email" placeholder="Email" required="{true}"/>
+        <input id="password" type="password" name="password" placeholder="Password" required="{true}"/>
+        <button id="btnLogin" onClick={login}>Log In</button>
+      </form>
+    </div>
+  </Layout>
 )
 
 export default LoginPage

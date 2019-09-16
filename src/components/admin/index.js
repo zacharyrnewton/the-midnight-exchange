@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "../default-layout"
 import { navigate } from "gatsby"
 import SEO from "../seo"
 import firebase from "../../services/firebase-config"
@@ -17,7 +16,7 @@ function logout(event) {
 };
 
 const IndexPage = () => (
-  <Layout>
+  <>
     <SEO title="Admin" />
     <div className="login-wrapper">
       <h1>You are on the Admin Index Page</h1>
@@ -25,7 +24,7 @@ const IndexPage = () => (
         <button id="btnLogout" onClick={logout}>Log Out</button>
       </form>
     </div>
-  </Layout>
+  </>
 )
 
 export default IndexPage

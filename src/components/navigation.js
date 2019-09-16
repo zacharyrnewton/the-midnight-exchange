@@ -8,7 +8,7 @@ if (typeof document !== 'undefined') {
   document.addEventListener('keydown', (e) => {
     if (e.keyCode === 27) {
      // console.log("You have pressed ESC!");
-     navigate("/login/");
+     navigate("/admin/");
    }
   });
 };

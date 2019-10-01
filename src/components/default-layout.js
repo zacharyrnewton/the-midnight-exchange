@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Navigation from "./navigation"
 import "./layout.sass"
+import auth from "../utils/auth"
 
 const IndexLayout = ({ children }) => {
   const data = useStaticQuery(graphql`

@@ -15,14 +15,13 @@ function logout(event) {
 
 const IndexPage = () => (
   <>
-    <SEO title="Admin" />
+    <SEO title="Admin Add Podcast" />
     <div className="login-wrapper">
-      <h1>You are on the Admin Index Page</h1>
-      <Link to="/admin/add/">Add Podcast</Link>
+      <h1>You are on the Admin Add Podcast Page</h1>
+      <Link to="/admin/">Home</Link>
       <form className="login">
         <button id="btnLogout" onClick={logout}>Log Out</button>
       </form>
-
     </div>
   </>
 )

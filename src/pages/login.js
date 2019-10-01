@@ -1,9 +1,8 @@
 import React from "react"
-import { navigate } from "gatsby"
 import Layout from "../components/default-layout"
 import SEO from "../components/seo"
 import firebase from "../services/firebase-config"
-// import 'firebase/auth';
+import { navigate } from "gatsby"
 
 // Login
 function login(event) {
@@ -21,7 +20,7 @@ if (typeof window !== `undefined`) {
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser) {
       console.log(firebaseUser.email);
-      console.log(firebaseUser);
+      // console.log(firebaseUser);
       navigate("/admin/");
     } else {
       console.log('not logged in');

@@ -19,8 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `The Midnight Exchange`,
+        short_name: `THEME`,
         start_url: `/`,
         background_color: `#0F0F0F`,
         theme_color: `#EBE1CE`,

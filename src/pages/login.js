@@ -19,12 +19,11 @@ function login(event) {
 if (typeof window !== `undefined`) {
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser) {
-      console.log(firebaseUser.email);
+      console.log("Logged in as: " + firebaseUser.email);
       // console.log(firebaseUser);
       navigate("/admin/");
     } else {
-      console.log('not logged in');
-      // navigate("/");
+      console.log('Not logged in');
     }
   });
 };
@@ -35,8 +34,8 @@ const LoginPage = () => (
     <div className="login-wrapper">
       <h1>Log In</h1>
       <form className="login">
-        <input id="email" type="email" name="email" placeholder="Email" required="{true}"/>
-        <input id="password" type="password" name="password" placeholder="Password" required="{true}"/>
+        <input id="email" type="email" name="email" placeholder="Email" required="{true}" autoComplete="username"/>
+        <input id="password" type="password" name="password" placeholder="Password" required="{true}" autoComplete="current-password"/>
         <button id="btnLogin" onClick={login}>Log In</button>
       </form>
     </div>

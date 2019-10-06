@@ -1,15 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap')
 
-// Variables
-$black: #000000
-$white: #FFFFFF
-
-$dark: #0F0F0F
-$light: #EBE1CE
-
-$color1: #C60B0B
-$color2: #1113B5
-$color3: #CD6209
+@import "./vars"
 
 
 *::selection
@@ -620,7 +611,7 @@ a.icon-link
     top: -100%
     width: 300%
     z-index: 2
-    background-image: url("../images/grain.jpg")
+    background-image: url("../../images/grain.jpg")
     background-size: 100px 100px
     background-repeat: repeat
     background-color: $dark
@@ -654,7 +645,7 @@ header.hero
     content: ""
     border-radius: 100%
     position: absolute
-    z-index: 3
+    z-index: 6
     right: 0
     left: 0
     width: 100%
@@ -796,6 +787,9 @@ nav
 nav.admin
   height: 160px
   box-shadow: 0 1px 0 0 transparentize($white, 0.84)
+  position: fixed
+  z-index: 5
+  background: $dark
   button#btnLogout
     background: $color1
     color: $light

@@ -1,13 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Navigation from "./admin-navigation"
-import "./layout.sass"
+import "../sass/config/config.sass"
 
 const AdminLayout = ({ children }) => {
 
   return (
     <>
-      <header className="hero">
+      <header>
         <Navigation  />
         {children}
       </header>

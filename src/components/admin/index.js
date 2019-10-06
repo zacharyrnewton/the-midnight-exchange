@@ -1,28 +1,35 @@
 import React from "react"
-import { navigate, Link } from "gatsby"
+import { Link } from "gatsby"
 import SEO from "../seo"
-import firebase from "../../services/firebase-config"
-
-// Logout
-function logout(event) {
-  event.stopPropagation();
-  event.preventDefault();
-  const email = firebase.auth().currentUser.email;
-  alert(email + " is logged out.");
-  firebase.auth().signOut();
-  navigate("/login/");
-};
+import style from "../../sass/admin.module.sass"
+// import firebase from "../../services/firebase-config"
 
 const IndexPage = () => (
   <>
     <SEO title="Admin" />
-    <div className="login-wrapper">
-      <h1>You are on the Admin Index Page</h1>
-      <Link to="/admin/add/">Add Podcast</Link>
-      <form className="login">
-        <button id="btnLogout" onClick={logout}>Log Out</button>
-      </form>
-
+    <div className={style.contentWrapper}>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+      <h1>Podcasts</h1>
+    </div>
+    <div className={style.bottomNavigation}>
+      <Link to="/admin/add/" className={style.addPodcast}>Add Podcast</Link>
     </div>
   </>
 )

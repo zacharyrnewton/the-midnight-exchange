@@ -776,6 +776,7 @@ nav
   align-items: center
   width: 100%
   padding: 58px 64px 58px 64px
+  height: 160px
   .nav-links
     a.social-link
       height: 44px
@@ -791,6 +792,21 @@ nav
       svg
         path, circle, rect
           fill: $white
+
+nav.admin
+  height: 160px
+  box-shadow: 0 1px 0 0 transparentize($white, 0.84)
+  button#btnLogout
+    background: $color1
+    color: $light
+    border: none
+    border-radius: 8px
+    padding: 11px 16px
+    margin: 0
+    font-weight: 800
+    &:hover
+      cursor: pointer
+      background: darken($color1, 5%)
 
 
 // Podcast Links
@@ -881,3 +897,4 @@ nav
       color: $light
       &:hover
         cursor: pointer
+        background: darken($color3, 5%)

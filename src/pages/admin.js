@@ -1,6 +1,6 @@
 import React from "react"
 import { Router } from "@reach/router"
-import Layout from "../components/default-layout"
+import Layout from "../components/admin-layout"
 import PrivateRoute from "../components/PrivateRoute"
 import AdminPage from "../components/admin/index"
 import AddPodcast from "../components/admin/add"

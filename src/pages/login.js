@@ -34,7 +34,7 @@ const LoginPage = () => (
     <div className="login-wrapper">
       <h1>Log In</h1>
       <form className="login">
-        <input id="email" type="email" name="email" placeholder="Email" required="{true}" autoComplete="username" autofocus/>
+        <input id="email" type="email" name="email" placeholder="Email" required="{true}" autoComplete="username" autoFocus/>
         <input id="password" type="password" name="password" placeholder="Password" required="{true}" autoComplete="current-password"/>
         <button id="btnLogin" onClick={login}>Log In</button>
       </form>

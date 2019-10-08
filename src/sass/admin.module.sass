@@ -1,5 +1,6 @@
 @import "./config/vars"
 
+// Admin Page General Styles
 .bottomNavigation
   position: fixed
   top: auto
@@ -60,3 +61,53 @@ h2.adminPodcastListItemTitle
   margin: 0 16px 0 0
 p.adminPodcastListItemExcerpt
   margin: 16px 0 0 0
+
+
+// Add Page
+form.podcastForm
+  margin: 16px auto
+  width: 100%
+  // background: pink
+
+  .inputWrapper
+    display: flex
+    flex-direction: column
+    user-select: none
+
+  .addFile
+    position: relative
+    width: 100%
+    height: 100px
+    border-radius: 8px
+    border: 1px dashed $light
+    background: transparentize($light, 0.95)
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    overflow: hidden
+    label
+      // position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      cursor: pointer
+      font-weight: 800
+      z-index: 2
+      &:hover
+        color: darken($light, 15%)
+      &:active
+        color: darken($light, 25%)
+    input
+      // position: absolute
+      // opacity: 0
+      z-index: 1
+      cursor: pointer
+      // margin: 20px 0 0 0
+      color: $light
+      &::-webkit-file-upload-button
+        visibility: hidden

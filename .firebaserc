@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "the-midnight-exchange"
+    "production": "the-midnight-exchange",
+    "staging": "the-midnight-exchange-staging"
   }
 }

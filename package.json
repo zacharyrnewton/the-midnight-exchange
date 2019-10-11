@@ -36,7 +36,9 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "deploy-p": "gatsby clean && gatsby build && firebase deploy -P production && firebase open hosting:site",
+    "deploy-s": "gatsby clean && gatsby build && firebase deploy -P staging && firebase open hosting:site"
   },
   "repository": {
     "type": "git",

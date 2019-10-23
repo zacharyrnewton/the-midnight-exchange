@@ -9,27 +9,72 @@ import firebase from "../../services/firebase-config"
 function add(event) {
   event.stopPropagation();
   event.preventDefault();
+
   // Firestore Reference
   const db = firebase.firestore();
 
   // Get Form Data
+  const podcastFile = document.getElementById('podcastFile').files[0];
   const title = document.getElementById('podcastName').value;
   const description = document.getElementById('podcastDescription').value;
-  const isExplicit = document.getElementById('podcastExplicitYes').value;
+  const isExplicit = document.getElementById('podcastExplicitNo').value;
 
-  // Post Data
-  db.collection("podcasts").add({
-      title: title,
-      description: description,
-      isExplicit: isExplicit
-  })
-  .then(function(docRef) {
-      console.log("Document written with ID: ", docRef.id);
-      navigate(/admin/);
-  })
-  .catch(function(error) {
-      console.error("Error adding document: ", error);
-  });
+  // Get Progress Bar
+  const uploader = document.getElementById('uploader');
+
+  // Create a storage Reference
+  const storageRef = firebase.storage().ref('podcasts/' + title + "/" + podcastFile.name);
+
+  // Upload file
+  const task = storageRef.put(podcastFile);
+
+  // Update Progress Bar
+  task.on('state_changed',
+
+    function progress(snapshot) {
+      const percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      uploader.value = percentage;
+    },
+
+    function error(error) {
+      alert("Error adding storage: ", error);
+      return null;
+    },
+
+    function complete() {
+      updateDB();
+    }
+
+  );
+
+  // Update Database
+  function updateDB() {
+
+    storageRef.getDownloadURL().then(function(url) {
+
+      const podcastUrl = url;
+
+      db.collection("podcasts").add({
+        title: title,
+        description: description,
+        isExplicit: isExplicit,
+        podcastUrl: podcastUrl
+      })
+
+      .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        alert('Uploaded!');
+        navigate(/admin/);
+      })
+
+      .catch(function(error) {
+        console.error("Error adding document: ", error);
+      });
+
+    });
+
+  }
+  
 };
 
 
@@ -44,6 +89,7 @@ const IndexPage = () => (
           <label htmlFor="podcastFile">Upload .mp3 file</label>
           <input type="file" id="podcastFile" name="podcastFile" accept="audio/mpeg, audio/mp4" />
         </div>
+        <progress id="uploader" value="0" max="100"></progress>
         <div className={style.inputWrapper}>
           <label htmlFor="podcastFile">Title</label>
           <input type="text" id="podcastName" name="podcastName" required/>

@@ -37,8 +37,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "deploy-p": "gatsby clean && gatsby build && firebase use production && firebase deploy && firebase open hosting:site",
-    "deploy-s": "gatsby clean && gatsby build && firebase use staging && firebase deploy && firebase open hosting:site"
+    "deploy-s": "gatsby clean && gatsby build && firebase use staging && firebase deploy && firebase open hosting:site",
+    "deploy-p": "gatsby clean && gatsby build && firebase use production && firebase deploy && firebase open hosting:site"
+
   },
   "repository": {
     "type": "git",

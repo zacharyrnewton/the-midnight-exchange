@@ -63,7 +63,7 @@ function add(event) {
 
       .then(function(docRef) {
         console.log("Document written with ID: ", docRef.id);
-        alert('Uploaded!');
+        alert('Uploaded Successfully!');
         navigate(/admin/);
       })
 
@@ -74,7 +74,7 @@ function add(event) {
     });
 
   }
-  
+
 };
 
 

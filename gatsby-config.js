@@ -124,6 +124,9 @@ module.exports = {
                   guid: podcast.id,
                   title: podcast.title,
                   description: podcast.description,
+                  url: podcast.podcastUrl,
+                  // Format the date using the RFC 2822 specifications. For example: Wed, 15 Jun 2019 19:00:00 GMT.
+                  date: '',
                   // Needs to pull from metadata
                   enclosure: {url: podcast.podcastUrl, type: 'audio/mpeg', size: 1668},
                   // link: 'this will be a link to the webpage it is on in the future',

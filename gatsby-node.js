@@ -45,7 +45,21 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
 
   try {
 
-    // initializeApp
+    // Initialize Firebase
+
+    // Production
+    // firebase.initializeApp({
+    //   apiKey: "AIzaSyDTwoTFhhTqzzlRg-PhHx3ky1zIp6Epn_I",
+    //   authDomain: "the-midnight-exchange.firebaseapp.com",
+    //   databaseURL: "https://the-midnight-exchange.firebaseio.com",
+    //   projectId: "the-midnight-exchange",
+    //   storageBucket: "the-midnight-exchange.appspot.com",
+    //   messagingSenderId: "153446151275",
+    //   appId: "1:153446151275:web:569bd5141e4c91e8",
+    //   measurementId: "G-KK9TK915WM"
+    // })
+
+    // Staging
     firebase.initializeApp({
       apiKey: "AIzaSyDTwoTFhhTqzzlRg-PhHx3ky1zIp6Epn_I",
       authDomain: "the-midnight-exchange.firebaseapp.com",
@@ -56,6 +70,7 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
       appId: "1:153446151275:web:569bd5141e4c91e8",
       measurementId: "G-KK9TK915WM"
     })
+
 
     // Fetch the data
     const podcastData = await firebase.firestore().collection("podcasts").get().then(function(podcasts){

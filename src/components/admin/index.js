@@ -3,6 +3,19 @@ import { Link } from "gatsby"
 import SEO from "../seo"
 import style from "../../sass/admin.module.sass"
 // import firebase from "../../services/firebase-config"
+//
+// const podcasts = firebase.firestore().collection("podcasts").get().then(function(podcasts){
+//   podcasts.forEach(function(podcast) {
+//     const podcastList = {
+//       id: podcast.id,
+//       title: podcast.title,
+//       description: podcast.description,
+//     };
+//     console.log(podcastList)
+//   })
+// });
+
+
 
 const IndexPage = () => (
   <>

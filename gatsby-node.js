@@ -48,18 +48,6 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
     // Initialize Firebase
 
     // Production
-    // firebase.initializeApp({
-    //   apiKey: "AIzaSyDTwoTFhhTqzzlRg-PhHx3ky1zIp6Epn_I",
-    //   authDomain: "the-midnight-exchange.firebaseapp.com",
-    //   databaseURL: "https://the-midnight-exchange.firebaseio.com",
-    //   projectId: "the-midnight-exchange",
-    //   storageBucket: "the-midnight-exchange.appspot.com",
-    //   messagingSenderId: "153446151275",
-    //   appId: "1:153446151275:web:569bd5141e4c91e8",
-    //   measurementId: "G-KK9TK915WM"
-    // })
-
-    // Staging
     firebase.initializeApp({
       apiKey: "AIzaSyDTwoTFhhTqzzlRg-PhHx3ky1zIp6Epn_I",
       authDomain: "the-midnight-exchange.firebaseapp.com",
@@ -71,22 +59,50 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
       measurementId: "G-KK9TK915WM"
     })
 
+    // Staging
+    // firebase.initializeApp({
+    //   apiKey: "AIzaSyDTwoTFhhTqzzlRg-PhHx3ky1zIp6Epn_I",
+    //   authDomain: "the-midnight-exchange.firebaseapp.com",
+    //   databaseURL: "https://the-midnight-exchange.firebaseio.com",
+    //   projectId: "the-midnight-exchange",
+    //   storageBucket: "the-midnight-exchange.appspot.com",
+    //   messagingSenderId: "153446151275",
+    //   appId: "1:153446151275:web:569bd5141e4c91e8",
+    //   measurementId: "G-KK9TK915WM"
+    // })
+
 
     // Fetch the data
     const podcastData = await firebase.firestore().collection("podcasts").get().then(function(podcasts){
       podcasts.forEach(function(podcast) {
         const podcastData = podcast.data()
+
+        // const title = podcastData.title;
+        // const description = podcastData.description;
+        // const podcastUrl = podcastData.podcastUrl;
+        // const isExplicit = podcastData.isExplicit;
+        // const isPublsihed = podcastData.isPublsihed;
+        // const pubDate = podcastData.pubDate;
+
         const node = {
+          // Data for Node
+          // title: title,
+          // description: description,
+          // isExplicit: isExplicit,
+          // isPublsihed: isPublsihed,
+          // pubDate: pubDate,
+          // podcastUrl: podcastUrl,
+
+          // Required Fields
           id: podcast.id,
-          parent: "Podcasts",
+          parent: `Podcasts`,
           ...podcastData,
           internal: {
-            type: 'Podcasts',
+            type: `Podcasts`,
             contentDigest: createContentDigest(podcastData),
+            description: `This is the data for each podcast from Firebase.`,
           }
         };
-
-        // console.log(podcast.id, " => ", podcast.data())
 
         console.log(podcast.id, " => ", node)
 

@@ -15,6 +15,8 @@ function add(event) {
 
   // Get Form Data
   const podcastFile = document.getElementById('podcastFile').files[0];
+
+
   const title = document.getElementById('podcastName').value;
   const description = document.getElementById('podcastDescription').value;
   const isExplicit = document.getElementById('podcastExplicitNo').value;
@@ -54,27 +56,42 @@ function add(event) {
 
       const podcastUrl = url;
 
-      db.collection("podcasts").add({
-        title: title,
-        description: description,
-        isExplicit: isExplicit,
-        podcastUrl: podcastUrl
-      })
+      // Get File Type
+      storageRef.getMetadata().then(function(metadata) {
+        const podcastFileType = metadata.contentType;
 
-      .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-        alert('Uploaded Successfully!');
-        navigate(/admin/);
-      })
+        // Get Duration
+        const audio = new Audio();
+        audio.src = podcastUrl;
+        audio.addEventListener('loadedmetadata', (event) => {
 
-      .catch(function(error) {
-        console.error("Error adding document: ", error);
+          const podcastDuration = audio.duration;
+
+          db.collection("podcasts").add({
+            title: title,
+            description: description,
+            isExplicit: isExplicit,
+            podcastUrl: podcastUrl,
+            podcastDuration: podcastDuration,
+            podcastFileType: podcastFileType
+          })
+
+          .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+            alert('Podcast Duration: ' + podcastDuration + '\n' + 'Podcast File Type: ' + podcastFileType + '\n' + 'Podcast Status: Uploaded Successfully!');
+            navigate(/admin/);
+          })
+
+          .catch(function(error) {
+            console.error("Error adding document: ", error);
+          });
+        });
+
+      }).catch(function(error) {
+        console.log("Failed to get metadata");
       });
-
     });
-
   }
-
 };
 
 
@@ -85,19 +102,23 @@ const IndexPage = () => (
     <div className={style.contentWrapper}>
       <h1>Add Podcast</h1>
       <form className={style.podcastForm}>
+        {/* Audio Upload */ }
         <div className={style.addFile + " " + style.inputWrapper}>
           <label htmlFor="podcastFile">Upload .mp3 file</label>
           <input type="file" id="podcastFile" name="podcastFile" accept="audio/mpeg, audio/mp4" />
         </div>
         <progress id="uploader" value="0" max="100"></progress>
+        {/* Title */}
         <div className={style.inputWrapper}>
           <label htmlFor="podcastFile">Title</label>
           <input type="text" id="podcastName" name="podcastName" required/>
         </div>
+        {/* Description or Shownotes */}
         <div className={style.inputWrapper}>
           <label htmlFor="podcastDescription">Description/Show-notes</label>
           <textarea id="podcastDescription" name="podcastDescription" required></textarea>
         </div>
+        {/* Explicit Flag */}
         <div className={style.inputWrapper + style.inputExplicit}>
           <p>Is this episode explicit?</p>
           <div>
@@ -109,14 +130,17 @@ const IndexPage = () => (
             <label htmlFor="No">No</label>
           </div>
         </div>
+        {/* Publish Date */}
         <div className={style.inputWrapper}>
           <label htmlFor="podcastPublishDate">Publish Date</label>
           <input type="date" id="podcastPublishDate" name="podcastPublishDate" required/>
         </div>
+        {/* Scheduled for Date */}
         <div className={style.inputWrapper}>
           <label htmlFor="podcastSchedule">Schedule</label>
           <input type="datetime-local" id="podcastSchedule" name="podcastSchedule"/>
         </div>
+        {/* Add Podcast */}
         <button id="btnLogin" onClick={add}>Add Podcast</button>
       </form>
       <Link to="/admin/" className={style.cancelButton}>Cancel</Link>

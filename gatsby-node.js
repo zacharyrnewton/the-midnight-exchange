@@ -6,6 +6,7 @@
 
 const firebase = require("firebase/app");
 const firestore = require("firebase/firestore");
+const storage = require("firebase/firestore");
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html") {
@@ -76,7 +77,8 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
     const podcastData = await firebase.firestore().collection("podcasts").get().then(function(podcasts){
       podcasts.forEach(function(podcast) {
         const podcastData = podcast.data()
-
+        const podcastFileType = podcastData.podcastUrl
+        console.log(podcastFileType)
         // const title = podcastData.title;
         // const description = podcastData.description;
         // const podcastUrl = podcastData.podcastUrl;

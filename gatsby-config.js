@@ -107,6 +107,7 @@ module.exports = {
                       podcastDuration
                       podcastUrl
                       podcastFileType
+                      pubDate
                     }
                   }
                 }
@@ -128,12 +129,12 @@ module.exports = {
                   description: podcast.description,
                   url: podcast.podcastUrl,
                   // Format the date using the RFC 2822 specifications. For example: Wed, 15 Jun 2019 19:00:00 GMT.
-                  date: '',
+                  date: podcast.pubDate,
                   // Needs to pull from metadata
                   enclosure: {url: podcast.podcastUrl, type: podcast.podcastFileType, size: podcast.podcastDuration},
                   // link: 'this will be a link to the webpage it is on in the future',
                   // Format the date using the RFC 2822 specifications. For example: Wed, 15 Jun 2019 19:00:00 GMT.
-                  pubDate: '',
+                  pubDate: podcast.pubDate,
                   custom_elements: [
                     {'content:encoded': podcast.description},
                     { 'itunes:title': podcast.title },
@@ -143,7 +144,7 @@ module.exports = {
                         href: 'https://themidnightexchange.com/images/channel/artwork.png'
                       }
                     }},
-                    { 'itunes:explicit': podcast.isExplicit },
+                    { 'itunes:explicit': podcast.isExplicit === true ? `yes` : `no` },
                     { 'itunes:duration': podcast.podcastDuration },
                   ],
                 });

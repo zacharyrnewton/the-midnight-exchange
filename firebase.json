@@ -5,6 +5,13 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "headers": [{
+      "source": "**/podcast.xml",
+      "headers": [{
+        "key": "Accept-Ranges",
+        "value": "bytes"
+      }]
+    }]
   }
 }

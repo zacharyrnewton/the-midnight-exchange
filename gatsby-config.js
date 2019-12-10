@@ -54,11 +54,11 @@ module.exports = {
             ],
             site_url: `https://themidnightexchange.com/`,
             feed_url: `https://themidnightexchange.com/podcast.xml`,
-            image_url: 'https://themidnightexchange.com/images/channel/artwork.png',
+            image_url: `https://themidnightexchange.com/images/channel/artwork.jpg`,
             language: `en-US`,
             copyright: `© 2019 The Midnight Exchange`,
             custom_namespaces: {
-              itunes: 'http://www.itunes.com/dtds/podcast-1.0.dtd',
+              itunes: `http://www.itunes.com/dtds/podcast-1.0.dtd`,
             },
             custom_elements: [
               { 'itunes:title': 'The Midnight Exchange'},
@@ -70,7 +70,7 @@ module.exports = {
               ]},
               {'itunes:image': {
                 _attr: {
-                  href: 'https://themidnightexchange.com/images/channel/artwork.png'
+                  href: 'https://themidnightexchange.com/images/channel/artwork.jpg'
                 }
               }},
               { 'itunes:summary': 'It’s that at ease feeling you get when you’re out with friends, talking over drinks in that dimly lit lounge with the good music. It’s about approaching life with a sense of curiosity and expectation; diving into any subject that gets your attention. It’s about spending time, having conversations you’ll never forget. This—is The Midnight Exchange.' },
@@ -82,16 +82,6 @@ module.exports = {
                     text: 'Technology'
                   }
                 }
-              ]},
-              {'itunes:category': [
-                {_attr: {
-                  text: 'Category'
-                }},
-                {'itunes:category': {
-                  _attr: {
-                    text: 'Sub-Category'
-                  }
-                }}
               ]},
             ],
             query: `
@@ -131,21 +121,22 @@ module.exports = {
                   // Format the date using the RFC 2822 specifications. For example: Wed, 15 Jun 2019 19:00:00 GMT.
                   date: podcast.pubDate,
                   // Needs to pull from metadata
-                  enclosure: {url: podcast.podcastUrl, type: podcast.podcastFileType, size: podcast.podcastDuration},
+                  enclosure: {url: podcast.podcastUrl, type: podcast.podcastFileType, size: Math.round(podcast.podcastDuration)},
                   // link: 'this will be a link to the webpage it is on in the future',
                   // Format the date using the RFC 2822 specifications. For example: Wed, 15 Jun 2019 19:00:00 GMT.
                   pubDate: podcast.pubDate,
                   custom_elements: [
                     {'content:encoded': podcast.description},
                     { 'itunes:title': podcast.title },
+                    { 'itunes:summary': podcast.description },
                     { 'itunes:episodeType': 'full' },
                     {'itunes:image': {
                       _attr: {
-                        href: 'https://themidnightexchange.com/images/channel/artwork.png'
+                        href: 'https://themidnightexchange.com/images/channel/artwork.jpg'
                       }
                     }},
-                    { 'itunes:explicit': podcast.isExplicit === true ? `yes` : `no` },
-                    { 'itunes:duration': podcast.podcastDuration },
+                    { 'itunes:explicit': podcast.isExplicit },
+                    { 'itunes:duration': Math.round(podcast.podcastDuration) },
                   ],
                 });
               });

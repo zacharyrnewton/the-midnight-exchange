@@ -59,6 +59,7 @@ function add(event) {
       // Get File Type
       storageRef.getMetadata().then(function(metadata) {
         const podcastFileType = metadata.contentType;
+        const podcastFileSize = metadata.size;
 
         // Get Duration
         const audio = new Audio();
@@ -73,12 +74,13 @@ function add(event) {
             isExplicit: isExplicit,
             podcastUrl: podcastUrl,
             podcastDuration: podcastDuration,
-            podcastFileType: podcastFileType
+            podcastFileType: podcastFileType,
+            podcastFileSize: podcastFileSize
           })
 
           .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
-            alert('Podcast Duration: ' + podcastDuration + '\n' + 'Podcast File Type: ' + podcastFileType + '\n' + 'Podcast Status: Uploaded Successfully!');
+            alert('Podcast Duration: ' + podcastDuration + '\n' + 'Podcast File Size: ' + podcastFileSize + '\n' + 'Podcast File Type: ' + podcastFileType + '\n' + 'Podcast Status: Uploaded Successfully!');
             navigate(/admin/);
           })
 

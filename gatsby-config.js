@@ -97,6 +97,7 @@ module.exports = {
                       podcastDuration
                       podcastUrl
                       podcastFileType
+                      podcastFileSize
                       pubDate
                     }
                   }
@@ -121,7 +122,7 @@ module.exports = {
                   // Format the date using the RFC 2822 specifications. For example: Wed, 15 Jun 2019 19:00:00 GMT.
                   date: podcast.pubDate,
                   // Needs to pull from metadata
-                  enclosure: {url: podcast.podcastUrl, type: podcast.podcastFileType, size: Math.round(podcast.podcastDuration)},
+                  enclosure: {url: podcast.podcastUrl, type: podcast.podcastFileType, size: Math.round(podcast.podcastFileSize)},
                   // link: 'this will be a link to the webpage it is on in the future',
                   // Format the date using the RFC 2822 specifications. For example: Wed, 15 Jun 2019 19:00:00 GMT.
                   pubDate: podcast.pubDate,

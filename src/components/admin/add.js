@@ -20,6 +20,8 @@ function add(event) {
   const title = document.getElementById('podcastName').value;
   const description = document.getElementById('podcastDescription').value;
   const isExplicit = document.getElementById('podcastExplicitNo').value;
+  const pubDatePreFormat = new Date(document.getElementById('podcastPublishDate').value);
+  const pubDate = pubDatePreFormat.toUTCString();
 
   // Get Progress Bar
   const uploader = document.getElementById('uploader');
@@ -75,7 +77,8 @@ function add(event) {
             podcastUrl: podcastUrl,
             podcastDuration: podcastDuration,
             podcastFileType: podcastFileType,
-            podcastFileSize: podcastFileSize
+            podcastFileSize: podcastFileSize,
+            pubDate: pubDate
           })
 
           .then(function(docRef) {
@@ -135,7 +138,7 @@ const IndexPage = () => (
         {/* Publish Date */}
         <div className={style.inputWrapper}>
           <label htmlFor="podcastPublishDate">Publish Date</label>
-          <input type="date" id="podcastPublishDate" name="podcastPublishDate" required/>
+          <input type="datetime-local" id="podcastPublishDate" name="podcastPublishDate" required/>
         </div>
         {/* Scheduled for Date */}
         <div className={style.inputWrapper}>

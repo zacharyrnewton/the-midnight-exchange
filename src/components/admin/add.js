@@ -15,11 +15,9 @@ function add(event) {
 
   // Get Form Data
   const podcastFile = document.getElementById('podcastFile').files[0];
-
-
   const title = document.getElementById('podcastName').value;
   const description = document.getElementById('podcastDescription').value;
-  const isExplicit = document.getElementById('podcastExplicitNo').value;
+  const isExplicit = JSON.parse(document.getElementById('podcastExplicit').value);
   const pubDatePreFormat = new Date(document.getElementById('podcastPublishDate').value);
   const pubDate = pubDatePreFormat.toUTCString();
 
@@ -110,7 +108,7 @@ const IndexPage = () => (
         {/* Audio Upload */ }
         <div className={style.addFile + " " + style.inputWrapper}>
           <label htmlFor="podcastFile">Upload .mp3 file</label>
-          <input type="file" id="podcastFile" name="podcastFile" accept="audio/mpeg, audio/mp4" />
+          <input type="file" id="podcastFile" name="podcastFile" accept="audio/mpeg, audio/mpeg3, audio/mp4" />
         </div>
         <progress id="uploader" value="0" max="100"></progress>
         {/* Title */}
@@ -124,16 +122,12 @@ const IndexPage = () => (
           <textarea id="podcastDescription" name="podcastDescription" required></textarea>
         </div>
         {/* Explicit Flag */}
-        <div className={style.inputWrapper + style.inputExplicit}>
-          <p>Is this episode explicit?</p>
-          <div>
-            <input type="radio" id="podcastExplicitYes" name="explicit" value="Yes"/>
-            <label htmlFor="Yes">Yes</label>
-          </div>
-          <div>
-            <input type="radio" id="podcastExplicitNo" name="explicit" value="No" defaultChecked/>
-            <label htmlFor="No">No</label>
-          </div>
+        <div className={style.inputWrapper}>
+          <label>Is this episode explicit?</label>
+          <select id="podcastExplicit" name="podcastExplicit">
+            <option value="false" selected>No</option>
+            <option value="true">Yes</option>
+          </select>
         </div>
         {/* Publish Date */}
         <div className={style.inputWrapper}>

@@ -79,22 +79,8 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
         const podcastData = podcast.data()
         const podcastFileType = podcastData.podcastUrl
         console.log(podcastFileType)
-        // const title = podcastData.title;
-        // const description = podcastData.description;
-        // const podcastUrl = podcastData.podcastUrl;
-        // const isExplicit = podcastData.isExplicit;
-        // const isPublsihed = podcastData.isPublsihed;
-        // const pubDate = podcastData.pubDate;
 
         const node = {
-          // Data for Node
-          // title: title,
-          // description: description,
-          // isExplicit: isExplicit,
-          // isPublsihed: isPublsihed,
-          // pubDate: pubDate,
-          // podcastUrl: podcastUrl,
-
           // Required Fields
           id: podcast.id,
           parent: `Podcasts`,

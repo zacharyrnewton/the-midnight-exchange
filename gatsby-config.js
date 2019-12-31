@@ -3,6 +3,7 @@ module.exports = {
     title: `The Midnight Exchange`,
     description: `It’s that at ease feeling you get when you’re out with friends, talking over drinks in that dimly lit lounge with the good music. It’s about approaching life with a sense of curiosity and expectation; diving into any subject that gets your attention. It’s about spending time, having conversations you’ll never forget. This—is The Midnight Exchange.`,
     author: `@THEMEpodcast`,
+    url: `https://themidnightexchange.com/`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -37,6 +38,7 @@ module.exports = {
               siteMetadata {
                 title
                 description
+                url
               }
             }
           }
@@ -59,20 +61,23 @@ module.exports = {
             copyright: `© 2019 The Midnight Exchange`,
             custom_namespaces: {
               itunes: `http://www.itunes.com/dtds/podcast-1.0.dtd`,
+              googleplay: `http://www.google.com/schemas/play-podcasts/1.0`,
             },
             custom_elements: [
               { 'itunes:title': 'The Midnight Exchange'},
               { 'itunes:type': 'episodic'},
               { 'itunes:author': 'The Midnight Exchange' },
-              {'itunes:owner': [
-                {'itunes:name': 'The Midnight Exchange'},
-                {'itunes:email': 'podcast@themidnightexchange.com'}
-              ]},
-              {'itunes:image': {
-                _attr: {
-                  href: 'https://themidnightexchange.com/images/channel/artwork.jpg'
+              { 'itunes:owner': [
+                { 'itunes:name': 'The Midnight Exchange'},
+                { 'itunes:email': 'podcast@themidnightexchange.com'}
+                ]
+              },
+              { 'itunes:image': {
+                  _attr: {
+                    href: 'https://themidnightexchange.com/images/channel/artwork.jpg'
+                  }
                 }
-              }},
+              },
               { 'itunes:summary': 'It’s that at ease feeling you get when you’re out with friends, talking over drinks in that dimly lit lounge with the good music. It’s about approaching life with a sense of curiosity and expectation; diving into any subject that gets your attention. It’s about spending time, having conversations you’ll never forget. This—is The Midnight Exchange.' },
               { 'itunes:explicit': false },
               // Need to update
@@ -83,6 +88,13 @@ module.exports = {
                   }
                 }
               ]},
+              { 'googleplay:author': 'The Midnight Exchange' },
+              { 'googleplay:image': {
+                  _attr: {
+                    href: 'https://themidnightexchange.com/images/channel/artwork.jpg'
+                  }
+                }
+              }
             ],
             query: `
               {
@@ -108,6 +120,8 @@ module.exports = {
 
               const siteData = site.siteMetadata;
 
+              const showNotesFooter = `<p>Find The Midnight Exchange online:</p><ul><li><a href="https://twitter.com/THEMEpodcast">Twitter</a></li><li><a href="https://www.instagram.com/themidnightexchange/">Instagram</a></li><li><a href="https://www.facebook.com/themidnightexchange">Facebook</a></li><li><a href="https://themidnightexchange.com">themidnightexchange.com</a></li></ul><p>Looking for Mario?<br /><a href="https://mbusto.com">mbusto.com</a></p><p>Looking for Zachary?<br /><a href="https://zacharynewton.me">zacharynewton.me</a></p>`;
+
               return allPodcasts.edges.map(edge => {
 
                 const podcast = edge.node;
@@ -117,23 +131,20 @@ module.exports = {
                   // Episode Data
                   guid: podcast.id,
                   title: podcast.title,
-                  description: podcast.description,
+                  description: podcast.description + showNotesFooter,
                   url: podcast.podcastUrl,
-                  // Format the date using the RFC 2822 specifications. For example: Wed, 15 Jun 2019 19:00:00 GMT.
                   date: podcast.pubDate,
-                  // Needs to pull from metadata
                   enclosure: {url: podcast.podcastUrl, type: podcast.podcastFileType, size: Math.round(podcast.podcastFileSize)},
                   // link: 'this will be a link to the webpage it is on in the future',
-                  // Format the date using the RFC 2822 specifications. For example: Wed, 15 Jun 2019 19:00:00 GMT.
                   pubDate: podcast.pubDate,
                   custom_elements: [
-                    {'content:encoded': podcast.description},
+                    { 'content:encoded': podcast.description + showNotesFooter},
                     { 'itunes:title': podcast.title },
-                    { 'itunes:summary': podcast.description },
+                    { 'itunes:summary': podcast.description + showNotesFooter},
                     { 'itunes:episodeType': 'full' },
-                    {'itunes:image': {
+                    { 'itunes:image': {
                       _attr: {
-                        href: 'https://themidnightexchange.com/images/channel/artwork.jpg'
+                        href: siteData.url + 'images/channel/artwork.jpg'
                       }
                     }},
                     { 'itunes:explicit': podcast.isExplicit },

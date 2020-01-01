@@ -51,7 +51,6 @@ module.exports = {
             description: `It’s that at ease feeling you get when you’re out with friends, talking over drinks in that dimly lit lounge with the good music. It’s about approaching life with a sense of curiosity and expectation; diving into any subject that gets your attention. It’s about spending time, having conversations you’ll never forget. This—is The Midnight Exchange.`,
             // Need to update
             categories: [
-              `Technology`,
               `Arts`,
             ],
             site_url: `https://themidnightexchange.com/`,
@@ -65,6 +64,7 @@ module.exports = {
             },
             custom_elements: [
               { 'itunes:title': 'The Midnight Exchange'},
+              { 'itunes:subtitle': 'Having conversations you’ll never forget.'},
               { 'itunes:type': 'episodic'},
               { 'itunes:author': 'The Midnight Exchange' },
               { 'itunes:owner': [
@@ -84,7 +84,7 @@ module.exports = {
               { 'itunes:category': [
                 {
                   _attr: {
-                    text: 'Technology'
+                    text: 'Arts'
                   }
                 }
               ]},
@@ -108,6 +108,7 @@ module.exports = {
                       isExplicit
                       podcastDuration
                       podcastUrl
+                      tempUrl
                       podcastFileType
                       podcastFileSize
                       pubDate
@@ -120,7 +121,7 @@ module.exports = {
 
               const siteData = site.siteMetadata;
 
-              const showNotesFooter = `<p>Find The Midnight Exchange online:</p><ul><li><a href="https://twitter.com/THEMEpodcast">Twitter</a></li><li><a href="https://www.instagram.com/themidnightexchange/">Instagram</a></li><li><a href="https://www.facebook.com/themidnightexchange">Facebook</a></li><li><a href="https://themidnightexchange.com">themidnightexchange.com</a></li></ul><p>Looking for Mario?<br /><a href="https://mbusto.com">mbusto.com</a></p><p>Looking for Zachary?<br /><a href="https://zacharynewton.me">zacharynewton.me</a></p>`;
+              const showNotesFooter = `<p>Find The Midnight Exchange online:</p><ul><li><a href="https://twitter.com/THEMEpodcast">Twitter</a></li><li><a href="https://www.instagram.com/themidnightexchange/">Instagram</a></li><li><a href="https://www.facebook.com/themidnightexchange">Facebook</a></li><li><a href="https://themidnightexchange.com">themidnightexchange.com</a></li></ul><br /><p>Looking for Mario?<br /><a href="https://mbusto.com">mbusto.com</a></p><p>Looking for Zachary?<br /><a href="https://zacharynewton.me">zacharynewton.me</a></p>`;
 
               return allPodcasts.edges.map(edge => {
 
@@ -132,9 +133,9 @@ module.exports = {
                   guid: podcast.id,
                   title: podcast.title,
                   description: podcast.description + showNotesFooter,
-                  url: podcast.podcastUrl,
+                  url: podcast.tempUrl,
                   date: podcast.pubDate,
-                  enclosure: {url: podcast.podcastUrl, type: podcast.podcastFileType, size: Math.round(podcast.podcastFileSize)},
+                  enclosure: {url: podcast.tempUrl, type: podcast.podcastFileType, size: Math.round(podcast.podcastFileSize)},
                   // link: 'this will be a link to the webpage it is on in the future',
                   pubDate: podcast.pubDate,
                   custom_elements: [

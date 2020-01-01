@@ -49,28 +49,28 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
     // Initialize Firebase
 
     // Production
-    // firebase.initializeApp({
-    //   apiKey: "AIzaSyDTwoTFhhTqzzlRg-PhHx3ky1zIp6Epn_I",
-    //   authDomain: "the-midnight-exchange.firebaseapp.com",
-    //   databaseURL: "https://the-midnight-exchange.firebaseio.com",
-    //   projectId: "the-midnight-exchange",
-    //   storageBucket: "the-midnight-exchange.appspot.com",
-    //   messagingSenderId: "153446151275",
-    //   appId: "1:153446151275:web:569bd5141e4c91e8",
-    //   measurementId: "G-KK9TK915WM"
-    // })
+    firebase.initializeApp({
+      apiKey: "AIzaSyDTwoTFhhTqzzlRg-PhHx3ky1zIp6Epn_I",
+      authDomain: "the-midnight-exchange.firebaseapp.com",
+      databaseURL: "https://the-midnight-exchange.firebaseio.com",
+      projectId: "the-midnight-exchange",
+      storageBucket: "the-midnight-exchange.appspot.com",
+      messagingSenderId: "153446151275",
+      appId: "1:153446151275:web:569bd5141e4c91e8",
+      measurementId: "G-KK9TK915WM"
+    })
 
     // Staging
-    firebase.initializeApp({
-      apiKey: "AIzaSyCM-QxRX2jfpqrtOlqYslya0lp4u7RlxTE",
-      authDomain: "the-midnight-exchange-staging.firebaseapp.com",
-      databaseURL: "https://the-midnight-exchange-staging.firebaseio.com",
-      projectId: "the-midnight-exchange-staging",
-      storageBucket: "the-midnight-exchange-staging.appspot.com",
-      messagingSenderId: "514443679557",
-      appId: "1:514443679557:web:8e1661970d6f572466502c",
-      measurementId: "G-9YMMNFWTZS"
-    })
+    // firebase.initializeApp({
+    //   apiKey: "AIzaSyCM-QxRX2jfpqrtOlqYslya0lp4u7RlxTE",
+    //   authDomain: "the-midnight-exchange-staging.firebaseapp.com",
+    //   databaseURL: "https://the-midnight-exchange-staging.firebaseio.com",
+    //   projectId: "the-midnight-exchange-staging",
+    //   storageBucket: "the-midnight-exchange-staging.appspot.com",
+    //   messagingSenderId: "514443679557",
+    //   appId: "1:514443679557:web:8e1661970d6f572466502c",
+    //   measurementId: "G-9YMMNFWTZS"
+    // })
 
 
     // Fetch the data

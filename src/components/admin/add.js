@@ -73,6 +73,7 @@ function add(event) {
             description: description,
             isExplicit: isExplicit,
             podcastUrl: podcastUrl,
+            tempUrl: podcastUrl,
             podcastDuration: podcastDuration,
             podcastFileType: podcastFileType,
             podcastFileSize: podcastFileSize,

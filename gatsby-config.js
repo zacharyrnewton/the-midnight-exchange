@@ -57,7 +57,7 @@ module.exports = {
             feed_url: `https://themidnightexchange.com/podcast.xml`,
             image_url: `https://themidnightexchange.com/images/channel/artwork.jpg`,
             language: `en-US`,
-            copyright: `© 2019 The Midnight Exchange`,
+            copyright: `© 2020 The Midnight Exchange`,
             custom_namespaces: {
               itunes: `http://www.itunes.com/dtds/podcast-1.0.dtd`,
               googleplay: `http://www.google.com/schemas/play-podcasts/1.0`,
@@ -112,6 +112,8 @@ module.exports = {
                       podcastFileType
                       podcastFileSize
                       pubDate
+                      season
+                      episode
                     }
                   }
                 }
@@ -150,6 +152,8 @@ module.exports = {
                     }},
                     { 'itunes:explicit': podcast.isExplicit },
                     { 'itunes:duration': Math.round(podcast.podcastDuration) },
+                    { 'itunes:season': podcast.season },
+                    { 'itunes:episode': podcast.episode },
                   ],
                 });
               });

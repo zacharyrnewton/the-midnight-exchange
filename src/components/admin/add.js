@@ -77,7 +77,9 @@ function add(event) {
             podcastDuration: podcastDuration,
             podcastFileType: podcastFileType,
             podcastFileSize: podcastFileSize,
-            pubDate: pubDate
+            pubDate: pubDate,
+            season: 1,
+            episode: '',
           })
 
           .then(function(docRef) {

@@ -61,6 +61,7 @@ module.exports = {
             custom_namespaces: {
               itunes: `http://www.itunes.com/dtds/podcast-1.0.dtd`,
               googleplay: `http://www.google.com/schemas/play-podcasts/1.0`,
+              webfeeds:  `http://webfeeds.org/rss/1.0`,
             },
             custom_elements: [
               { 'itunes:title': 'The Midnight Exchange'},
@@ -94,7 +95,23 @@ module.exports = {
                     href: 'https://themidnightexchange.com/images/channel/artwork.jpg'
                   }
                 }
-              }
+              },
+              { 'webfeeds:cover': {
+                  _attr: {
+                    image: 'https://themidnightexchange.com/images/channel/artwork.jpg'
+                  }
+                }
+              },
+              { 'webfeeds:icon': 'https://themidnightexchange.com/images/channel/icon.jpg' },
+              { 'webfeeds:related': {
+                  _attr: {
+                    layout: 'card',
+                    target: 'browser'
+                  }
+                }
+              },
+              { 'webfeeds:logo': 'https://themidnightexchange.com/images/channel/logo.jpg' },
+              { 'webfeeds:accentColor': 'CD6209' },
             ],
             query: `
               {
@@ -154,6 +171,12 @@ module.exports = {
                     { 'itunes:duration': Math.round(podcast.podcastDuration) },
                     { 'itunes:season': podcast.season },
                     { 'itunes:episode': podcast.episode },
+                    { 'webfeeds:cover': {
+                        _attr: {
+                          image: 'https://themidnightexchange.com/images/channel/artwork.jpg'
+                        }
+                      }
+                    },
                   ],
                 });
               });

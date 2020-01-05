@@ -67,7 +67,9 @@ p.adminPodcastListItemExcerpt
 form.podcastForm
   margin: 16px auto
   width: 100%
-  // background: pink
+  display: grid
+  grid-template-columns: 1fr
+  grid-gap: 16px
 
   progress[value]
     -webkit-appearance: none
@@ -83,9 +85,25 @@ form.podcastForm
   progress::-webkit-progress-value
     background-color: $color2
   .inputWrapper
-    display: flex
-    flex-direction: column
+    display: grid
+    grid-template-columns: 1fr
+    grid-row-gap: 4px
     user-select: none
+    input, button, textarea, select
+      outline: none
+    input, textarea, select
+      background: $light
+      border: none
+      padding: 16px
+      margin-bottom: 1px
+      &::placeholder
+        color: $dark
+      &:first-of-type
+        border-radius: 8px 8px 0 0
+      &:last-of-type
+        border-radius: 0 0 8px 8px
+      &:only-of-type
+        border-radius: 8px
 
   .addFile
     position: relative
@@ -100,6 +118,7 @@ form.podcastForm
     justify-content: center
     overflow: hidden
     text-align: center
+    user-select: none
     label
       // position: absolute
       top: 0
@@ -127,3 +146,26 @@ form.podcastForm
       color: $light
       &::-webkit-file-upload-button
         visibility: hidden
+
+
+
+  button, a
+    border-radius: 8px
+    background: $color3
+    padding: 16px
+    border: none
+    margin-top: 15px
+    font-weight: 800
+    color: $light
+    text-align: center
+    &:hover
+      cursor: pointer
+      background: darken($color3, 5%)
+  a
+    border: 1px solid $color1
+    background: none
+    color: $color1
+    &:hover
+      filter: none
+      background: none
+      opacity: .75

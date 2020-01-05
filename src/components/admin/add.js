@@ -18,6 +18,8 @@ function add(event) {
   const title = document.getElementById('podcastName').value;
   const description = document.getElementById('podcastDescription').value;
   const isExplicit = JSON.parse(document.getElementById('podcastExplicit').value);
+  const season = parseInt(document.getElementById('podcastSeason').value);
+  const episode = parseInt(document.getElementById('podcastEpisode').value);
   const pubDatePreFormat = new Date(document.getElementById('podcastPublishDate').value);
   const pubDate = pubDatePreFormat.toUTCString();
 
@@ -72,6 +74,8 @@ function add(event) {
             title: title,
             description: description,
             isExplicit: isExplicit,
+            season: season,
+            episode: episode,
             podcastUrl: podcastUrl,
             tempUrl: podcastUrl,
             podcastDuration: podcastDuration,
@@ -109,20 +113,20 @@ const IndexPage = () => (
       <h1>Add Podcast</h1>
       <form className={style.podcastForm}>
         {/* Audio Upload */ }
-        <div className={style.addFile + " " + style.inputWrapper}>
+        <div className={style.addFile}>
           <label htmlFor="podcastFile">Upload .mp3 file</label>
           <input type="file" id="podcastFile" name="podcastFile" accept="audio/mpeg, audio/mpeg3, audio/mp4" />
         </div>
         <progress id="uploader" value="0" max="100"></progress>
         {/* Title */}
         <div className={style.inputWrapper}>
-          <label htmlFor="podcastFile">Title</label>
-          <input type="text" id="podcastName" name="podcastName" required/>
+          <label htmlFor="podcastName">Title</label>
+          <input type="text" id="podcastName" name="podcastName" placeholder="Title" required/>
         </div>
         {/* Description or Shownotes */}
         <div className={style.inputWrapper}>
-          <label htmlFor="podcastDescription">Description/Show-notes</label>
-          <textarea id="podcastDescription" name="podcastDescription" required></textarea>
+          <label htmlFor="podcastDescription">Description/Show Notes</label>
+          <textarea id="podcastDescription" name="podcastDescription" rows="4" placeholder="<p>Show notes must be in HTML format.</p>" required></textarea>
         </div>
         {/* Explicit Flag */}
         <div className={style.inputWrapper}>
@@ -132,20 +136,31 @@ const IndexPage = () => (
             <option value="true">Yes</option>
           </select>
         </div>
+        {/* Season */}
+        <div className={style.inputWrapper}>
+          <label htmlFor="podcastSeason">Season</label>
+          <input type="number" id="podcastSeason" name="podcastSeason" step="1" placeholder="Season number" required/>
+        </div>
+        {/* Episode */}
+        <div className={style.inputWrapper}>
+          <label htmlFor="podcastEpisode">Episode</label>
+          <input type="number" id="podcastEpisode" name="podcastEpisode" step="1" placeholder="Episode number" required/>
+        </div>
         {/* Publish Date */}
         <div className={style.inputWrapper}>
           <label htmlFor="podcastPublishDate">Publish Date</label>
           <input type="datetime-local" id="podcastPublishDate" name="podcastPublishDate" required/>
         </div>
         {/* Scheduled for Date */}
-        <div className={style.inputWrapper}>
+        {/*<div className={style.inputWrapper}>
           <label htmlFor="podcastSchedule">Schedule</label>
           <input type="datetime-local" id="podcastSchedule" name="podcastSchedule"/>
-        </div>
+        </div>*/}
         {/* Add Podcast */}
         <button id="btnLogin" onClick={add}>Add Podcast</button>
+        <Link to="/admin/" className={style.cancelButton}>Cancel</Link>
       </form>
-      <Link to="/admin/" className={style.cancelButton}>Cancel</Link>
+
     </div>
   </>
 )

@@ -82,8 +82,6 @@ function add(event) {
             podcastFileType: podcastFileType,
             podcastFileSize: podcastFileSize,
             pubDate: pubDate,
-            season: 1,
-            episode: '',
           })
 
           .then(function(docRef) {
@@ -130,7 +128,7 @@ const IndexPage = () => (
         </div>
         {/* Explicit Flag */}
         <div className={style.inputWrapper}>
-          <label>Is this episode explicit?</label>
+          <label htmlFor="podcastExplicit">Is this episode explicit?</label>
           <select id="podcastExplicit" name="podcastExplicit">
             <option value="false" selected>No</option>
             <option value="true">Yes</option>

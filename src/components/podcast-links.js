@@ -2,7 +2,7 @@ import React from "react"
 
 const PodcastLinks = ({ siteTitle }) => (
   <div className="podcast-links">
-    <a href="https://google.com" target="_blank" rel="noopener noreferrer" className="icon-link">Apple Podcast
+    <a href="https://podcasts.apple.com/us/podcast/the-midnight-exchange/id1500209456" target="_blank" rel="noopener noreferrer" className="icon-link">Apple Podcast
       <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"><g transform="translate(-782 -970)"><circle cx="23" cy="23" r="23" transform="translate(782 970)" fill="#ebe1ce" opacity="0"/><path d="M17.483,31.94c-.336,1.243-1.606,1.532-2.839,1.532s-2.5-.289-2.839-1.532a47.638,47.638,0,0,1-1.345-8.683c0-2.3,2.036-2.86,4.184-2.86s4.184.562,4.184,2.86a47.685,47.685,0,0,1-1.345,8.683ZM10.255,18.864a6.276,6.276,0,1,1,8.778,0,.393.393,0,0,0,.041.6,4.349,4.349,0,0,1,1.388,1.658.39.39,0,0,0,.618.124,9.414,9.414,0,1,0-12.872,0,.39.39,0,0,0,.618-.123,4.349,4.349,0,0,1,1.388-1.658.393.393,0,0,0,.041-.6ZM14.644,0A14.649,14.649,0,0,0,8.22,27.811a.392.392,0,0,0,.558-.413c-.156-1.014-.284-2.023-.353-2.9a.394.394,0,0,0-.175-.295,11.506,11.506,0,1,1,12.628.106c-.065.918-.2,2-.368,3.088a.392.392,0,0,0,.558.413A14.649,14.649,0,0,0,14.644,0Zm0,10.46a4.184,4.184,0,1,0,4.184,4.184A4.184,4.184,0,0,0,14.644,10.46Z" transform="translate(790 976)" fill="#ebe1ce"/></g></svg>
     </a>
     <a href="https://podcasts.google.com/?feed=aHR0cHM6Ly90aGVtaWRuaWdodGV4Y2hhbmdlLmNvbS9wb2RjYXN0LnhtbA" target="_blank" rel="noopener noreferrer" className="icon-link">Google Podcast

@@ -75,7 +75,10 @@ function SEO({ description, lang, meta, title, link }) {
         },
       ].concat(meta)}
       link={[
-
+        {
+          rel: `mask-icon`,
+          color: `#C60B0B`,
+        }
       ].concat(link)}
     />
   )

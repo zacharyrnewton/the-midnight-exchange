@@ -146,7 +146,7 @@ module.exports = {
 
               const siteData = site.siteMetadata;
 
-              const showNotesFooter = `<p>Find The Midnight Exchange online:</p><ul><li><a href="https://twitter.com/THEMEpodcast">Twitter</a></li><li><a href="https://www.instagram.com/themidnightexchange/">Instagram</a></li><li><a href="https://www.facebook.com/themidnightexchange">Facebook</a></li><li><a href="https://themidnightexchange.com">themidnightexchange.com</a></li></ul><br /><p>Looking for Mario?<br /><a href="https://mbusto.com">mbusto.com</a></p><p>Looking for Zachary?<br /><a href="https://zacharynewton.me">zacharynewton.me</a></p>`;
+              const showNotesFooter = `<br/><p><b>Find The Midnight Exchange online:<b/></p><ul><li><a href="https://twitter.com/THEMEpodcast">Twitter</a></li><li><a href="https://www.instagram.com/themidnightexchange/">Instagram</a></li><li><a href="https://www.facebook.com/themidnightexchange">Facebook</a></li><li><a href="https://themidnightexchange.com">themidnightexchange.com</a></li></ul><br /><p><b>Looking for Mario?</b><br /><a href="https://mbusto.com">mbusto.com</a></p><p><b>Looking for Zachary?</b><br /><a href="https://zacharynewton.me">zacharynewton.me</a></p>`;
 
               return allPodcasts.edges.map(edge => {
 

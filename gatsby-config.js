@@ -3,7 +3,8 @@ module.exports = {
     title: `The Midnight Exchange`,
     description: `It’s that at ease feeling you get when you’re out with friends, talking over drinks in that dimly lit lounge with the good music. It’s about approaching life with a sense of curiosity and expectation; diving into any subject that gets your attention. It’s about spending time, having conversations you’ll never forget. This—is The Midnight Exchange.`,
     author: `@THEMEpodcast`,
-    url: `https://themidnightexchange.com/`
+    url: `https://themidnightexchange.com/`,
+    siteUrl: `https://themidnightexchange.com/`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -212,7 +213,14 @@ module.exports = {
         ],
       },
     },
-
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        exclude: [`/admin`,`/admin/*`,`/podcast`,`/login`],
+      },
+    },
+  
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

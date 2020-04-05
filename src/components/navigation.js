@@ -26,16 +26,7 @@ const Navigation = ({ siteTitle }) => (
       </svg>
     </Link>
     <div className="nav-links">
-      <a href="https://www.instagram.com/themidnightexchange/" target="_blank" rel="noopener noreferrer" className="social-link icon-link"
-        onClick={e => {
-          // e.preventDefault()
-          trackCustomEvent({
-            category: "Social Media",
-            action: "Social Account Link Click",
-            label: "Instagram",
-          })
-        }}
-      >Instagram
+      <a href="https://www.instagram.com/themidnightexchange/" target="_blank" rel="noopener noreferrer" className="social-link icon-link">Instagram
         <svg id="instagram-svg-link" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
           <g transform="translate(-1714 -58)">
             <circle cx="22" cy="22" r="22" transform="translate(1714 58)" fill="#ebe1ce" opacity="0"/>
@@ -43,16 +34,7 @@ const Navigation = ({ siteTitle }) => (
           </g>
         </svg>
       </a>
-      <a href="https://twitter.com/THEMEpodcast/" target="_blank" rel="noopener noreferrer" className="social-link icon-link"
-        onClick={e => {
-          // e.preventDefault()
-          trackCustomEvent({
-            category: "Social Media",
-            action: "Social Account Link Click",
-            label: "Twitter",
-          })
-        }}
-      >Twitter
+      <a href="https://twitter.com/THEMEpodcast/" target="_blank" rel="noopener noreferrer" className="social-link icon-link">Twitter
         <svg id="twitter-svg-link" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
           <g transform="translate(-1766 -58)">
             <circle cx="22" cy="22" r="22" transform="translate(1766 58)" fill="#ebe1ce" opacity="0"/>
@@ -60,20 +42,19 @@ const Navigation = ({ siteTitle }) => (
           </g>
         </svg>
       </a>
-      <a href="https://www.facebook.com/themidnightexchange/" target="_blank" rel="noopener noreferrer" className="social-link icon-link"
-        onClick={e => {
-          // e.preventDefault()
-          trackCustomEvent({
-            category: "Social Media",
-            action: "Social Account Link Click",
-            label: "Facebook",
-          })
-        }}
-      >Facebook
+      <a href="https://www.facebook.com/themidnightexchange/" target="_blank" rel="noopener noreferrer" className="social-link icon-link">Facebook
         <svg id="facebook-svg-link" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
           <g transform="translate(-1818 -58)">
             <circle cx="22" cy="22" r="22" transform="translate(1818 58)" fill="#ebe1ce" opacity="0"/>
             <path d="M39.653,18.839l.93-6.061H34.767V8.845c0-1.658.812-3.275,3.417-3.275h2.644V.409A32.244,32.244,0,0,0,36.135,0c-4.79,0-7.92,2.9-7.92,8.159v4.62H22.89v6.061h5.324V33.492h6.553V18.839Z" transform="translate(1807.648 63.253)" fill="#ebe1ce"/>
+          </g>
+        </svg>
+      </a>
+      <a href="https://www.youtube.com/channel/UCSS_2w8OHbOqa6Tc3OSnRng/" target="_blank" rel="noopener noreferrer" className="social-link icon-link">YouTube
+        <svg id="youtube-svg-link" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+          <g transform="translate(-1818 -58)">
+            <circle cx="22" cy="22" r="22" transform="translate(1818 58)" fill="#ebe1ce" opacity="0"/>
+            <path d="M50.181,67.961A4.523,4.523,0,0,0,47,64.757C44.191,64,32.933,64,32.933,64s-11.257,0-14.065.757a4.524,4.524,0,0,0-3.183,3.2c-.752,2.826-.752,8.721-.752,8.721s0,5.9.752,8.721a4.456,4.456,0,0,0,3.183,3.152c2.808.757,14.065.757,14.065.757s11.257,0,14.065-.757A4.456,4.456,0,0,0,50.181,85.4c.752-2.826.752-8.721.752-8.721S50.933,70.786,50.181,67.961ZM29.251,82.035V71.329l9.409,5.353Z" transform="translate(1807.067 3)" fill="#ebe1ce"/>
           </g>
         </svg>
       </a>

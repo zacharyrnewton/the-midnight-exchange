@@ -16,7 +16,7 @@ if (typeof document !== 'undefined') {
 
 const Navigation = ({ siteTitle }) => (
   <nav>
-    <Link to="/">Home
+    <Link to="/" aria-label="Home">
       <svg xmlns="http://www.w3.org/2000/svg" width="67.199" height="32" viewBox="0 0 67.199 32">
         <path d="M-43-37V-69h6.4v12.8h19.2v6.4H-36.6V-37Z" transform="translate(81.4 69)" fill="#ebe1ce"/>
         <rect width="19.2" height="6.4" transform="translate(48)" fill="#ebe1ce"/>
@@ -27,7 +27,7 @@ const Navigation = ({ siteTitle }) => (
       </svg>
     </Link>
     <div className="nav-links">
-      <a href="https://www.instagram.com/themidnightexchange/" target="_blank" rel="noopener noreferrer" className="social-link icon-link"
+      <a href="https://www.instagram.com/themidnightexchange/" target="_blank" rel="noopener noreferrer" className="social-link icon-link" aria-label="Instagram"
         onClick={e => {
           // e.preventDefault()
           trackCustomEvent({
@@ -36,7 +36,7 @@ const Navigation = ({ siteTitle }) => (
             label: "Instagram",
           })
         }}      
-      >Instagram
+      >
         <svg id="instagram-svg-link" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
           <g transform="translate(-1714 -58)">
             <circle cx="22" cy="22" r="22" transform="translate(1714 58)" fill="#ebe1ce" opacity="0"/>
@@ -44,7 +44,7 @@ const Navigation = ({ siteTitle }) => (
           </g>
         </svg>
       </a>
-      <a href="https://twitter.com/THEMEpodcast/" target="_blank" rel="noopener noreferrer" className="social-link icon-link"
+      <a href="https://twitter.com/THEMEpodcast/" target="_blank" rel="noopener noreferrer" className="social-link icon-link" aria-label="Twitter"
         onClick={e => {
           // e.preventDefault()
           trackCustomEvent({
@@ -53,7 +53,7 @@ const Navigation = ({ siteTitle }) => (
             label: "Twitter",
           })
         }}
-      >Twitter
+      >
         <svg id="twitter-svg-link" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
           <g transform="translate(-1766 -58)">
             <circle cx="22" cy="22" r="22" transform="translate(1766 58)" fill="#ebe1ce" opacity="0"/>
@@ -61,7 +61,7 @@ const Navigation = ({ siteTitle }) => (
           </g>
         </svg>
       </a>
-      <a href="https://www.facebook.com/themidnightexchange/" target="_blank" rel="noopener noreferrer" className="social-link icon-link"
+      <a href="https://www.facebook.com/themidnightexchange/" target="_blank" rel="noopener noreferrer" className="social-link icon-link" aria-label="Facebook"
         onClick={e => {
           // e.preventDefault()
           trackCustomEvent({
@@ -70,7 +70,7 @@ const Navigation = ({ siteTitle }) => (
             label: "Facebook",
           })
         }}   
-      >Facebook
+      >
         <svg id="facebook-svg-link" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
           <g transform="translate(-1818 -58)">
             <circle cx="22" cy="22" r="22" transform="translate(1818 58)" fill="#ebe1ce" opacity="0"/>
@@ -78,7 +78,7 @@ const Navigation = ({ siteTitle }) => (
           </g>
         </svg>
       </a>
-      <a href="https://www.youtube.com/channel/UCSS_2w8OHbOqa6Tc3OSnRng/" target="_blank" rel="noopener noreferrer" className="social-link icon-link"
+      <a href="https://www.youtube.com/channel/UCSS_2w8OHbOqa6Tc3OSnRng/" target="_blank" rel="noopener noreferrer" className="social-link icon-link" aria-label="YouTube"
         onClick={e => {
           // e.preventDefault()
           trackCustomEvent({
@@ -87,7 +87,7 @@ const Navigation = ({ siteTitle }) => (
             label: "YouTube",
           })
         }}  
-      >YouTube
+      >
         <svg id="youtube-svg-link" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
           <g transform="translate(-1818 -58)">
             <circle cx="22" cy="22" r="22" transform="translate(1818 58)" fill="#ebe1ce" opacity="0"/>

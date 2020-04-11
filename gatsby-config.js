@@ -1,10 +1,17 @@
+// const path = require(`path`)
+const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+})
+console.log(`Using environment config: '${activeEnv}'`)
+console.log(process.env.NODE_ENV)
 module.exports = {
   siteMetadata: {
-    title: `The Midnight Exchange`,
-    description: `It’s that at ease feeling you get when you’re out with friends, talking over drinks in that dimly lit lounge with the good music. It’s about approaching life with a sense of curiosity and expectation; diving into any subject that gets your attention. It’s about spending time, having conversations you’ll never forget. This—is The Midnight Exchange.`,
-    author: `@THEMEpodcast`,
-    url: `https://themidnightexchange.com/`,
-    siteUrl: `https://themidnightexchange.com/`
+    title: process.env.SITE_TITLE,
+    description: process.env.SITE_DESCRIPTION,
+    author: process.env.SITE_AUTHOR,
+    url: process.env.SITE_URL,
+    siteUrl: process.env.SITE_URL,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -33,7 +40,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-162068524-1",
+        trackingId: process.env.GA_TRACKING_ID,
         head: true,
         anonymize: false,
         respectDNT: false,

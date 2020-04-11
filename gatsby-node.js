@@ -50,7 +50,7 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
   // Fetch Podcasts
 
   try {
-    if (process.env.GATSBY_ACTIVE_ENV == "production") {
+    if (process.env.GATSBY_ACTIVE_ENV === "production") {
       firebase.initializeApp({
         apiKey: "AIzaSyDTwoTFhhTqzzlRg-PhHx3ky1zIp6Epn_I",
         authDomain: "the-midnight-exchange.firebaseapp.com",

@@ -1,13 +1,65 @@
 import React from "react"
 import Layout from "../components/default-layout"
 import SEO from "../components/seo"
+import { graphql, Link } from "gatsby"
+
+const Podcasts = ( { podcasts } ) => {
+  if (!podcasts) return null
+  return(
+    <ul>
+      {podcasts.map(podcast => {
+        return (
+          <li>
+            <Link to={'/podcast/' + podcast.id} key={podcast.id}>
+              {podcast.title}
+            </Link>
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
+
+// const PodcastIndex = ({data}) => (
+  
+//   <Layout>
+//     <SEO title="Podcast" />
+//     <h1>HELLO WORLD</h1>
+//     <Podcasts podcasts={podcasts}/>
+//   </Layout>
+// )
+
+// export default PodcastIndex
+
+export default ({data}) => {
+  const podcasts = data.allPodcasts.nodes
+  return (
+    <Layout>
+      <SEO title="Podcast" />
+      <Podcasts podcasts={podcasts}/>
+    </Layout>
+  )
+}
 
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Podcast" />
-    <h1>HELLO WORLD</h1>
-  </Layout>
-)
-
-export default IndexPage
+export const pageQuery = graphql`
+  query PodcastsQuery {
+    allPodcasts {
+      nodes {
+        title
+        tempUrl
+        season
+        pubDate
+        podcastUrl
+        podcastFileType
+        podcastFileSize
+        podcastDuration
+        isExplicit
+        id
+        episode
+        description
+      }
+    }
+  }
+  
+`

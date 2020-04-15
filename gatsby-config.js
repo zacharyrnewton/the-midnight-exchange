@@ -33,7 +33,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#0F0F0F`,
         theme_color: `#EBE1CE`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },

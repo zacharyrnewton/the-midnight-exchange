@@ -17,18 +17,40 @@
   box-shadow: 0 -1px 0 0 transparentize($white, 0.84)
   background: $dark
   z-index: 100
-  .addPodcast
-    width: 100%
-    background: $color3
-    color: $light
-    font-weight: 800
-    border-radius: 8px
+  .buttonWrapper
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
+    box-sizing: border-box
+    grid-gap: 16px
     max-width: 800px
-    padding: 11px 16px
-    text-align: center
-    &:hover
-      background: darken($color3, 5%)
-      filter: none
+    margin: auto
+    width: 100%
+    .buttonPrimary
+      width: 100%
+      background: $color3
+      color: $light
+      font-weight: 800
+      border-radius: 8px
+      max-width: 800px
+      padding: 11px 16px
+      text-align: center
+      &:hover
+        background: darken($color3, 5%)
+        filter: none
+    .buttonSecondary
+      width: 100%
+      background: none
+      color: $color3
+      border: 1px solid $color3
+      font-weight: 800
+      border-radius: 8px
+      max-width: 800px
+      padding: 11px 16px
+      text-align: center
+      &:hover
+        border: 1px solid darken($color3, 5%)
+        filter: none
+        color: darken($color3, 5%)
 
 .contentWrapper
   width: 100%
@@ -38,7 +60,10 @@
   h1
     margin: 0
     font-weight: 800
-
+  .podcastMeta
+    list-style: none
+    padding: 0
+    margin: 1rem 0 2rem 0
 ul.adminPodcastList
   list-style: none
   margin: 0
@@ -61,6 +86,24 @@ h2.adminPodcastListItemTitle
   margin: 0 16px 0 0
 p.adminPodcastListItemExcerpt
   margin: 16px 0 0 0
+  text-overflow: ellipsis
+  display: -webkit-box
+  -webkit-line-clamp: 3
+  -webkit-box-orient: vertical
+  overflow: hidden
+  *
+    margin: 0 0 0 0
+    padding: 0 0 0 0
+    display: inline-block
+    pointer-events: none
+    cursor: default
+    text-decoration: none
+    color: inherit
+  br
+    display: none
+  p
+    display: inline
+  
 
 
 // Add Page

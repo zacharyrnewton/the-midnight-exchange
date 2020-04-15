@@ -1,4 +1,4 @@
-name: Node.js CI - Deploy to Staging
+name: Node.js CI - Deploy to Production
 
 on:
   push:

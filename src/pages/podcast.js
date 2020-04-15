@@ -3,14 +3,14 @@ import Layout from "../components/default-layout"
 import SEO from "../components/seo"
 import { graphql, Link } from "gatsby"
 
-const Podcasts = ( { podcasts } ) => {
+const Podcasts = ({ podcasts }) => {
   if (!podcasts) return null
-  return(
+  return (
     <ul>
       {podcasts.map(podcast => {
         return (
           <li>
-            <Link to={'/podcast/' + podcast.id} key={podcast.id}>
+            <Link to={"/episode/" + podcast.id} key={podcast.id}>
               {podcast.title}
             </Link>
           </li>
@@ -21,7 +21,7 @@ const Podcasts = ( { podcasts } ) => {
 }
 
 // const PodcastIndex = ({data}) => (
-  
+
 //   <Layout>
 //     <SEO title="Podcast" />
 //     <h1>HELLO WORLD</h1>
@@ -31,16 +31,15 @@ const Podcasts = ( { podcasts } ) => {
 
 // export default PodcastIndex
 
-export default ({data}) => {
+export default ({ data }) => {
   const podcasts = data.allPodcasts.nodes
   return (
     <Layout>
       <SEO title="Podcast" />
-      <Podcasts podcasts={podcasts}/>
+      <Podcasts podcasts={podcasts} />
     </Layout>
   )
 }
-
 
 export const pageQuery = graphql`
   query PodcastsQuery {
@@ -61,5 +60,4 @@ export const pageQuery = graphql`
       }
     }
   }
-  
 `

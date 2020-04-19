@@ -129,17 +129,17 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  //   const adminPodcast = path.resolve("src/templates/adminPodcast.js")
+  // const adminPodcast = path.resolve("src/templates/adminPodcast.js")
 
-  //   pages.data.allPodcasts.nodes.forEach(node => {
-  //     createPage({
-  //       path: `/admin/podcast/${node.id}`,
-  //       component: adminPodcast,
-  //       context: {
-  //         id: node.id,
-  //       },
-  //     })
+  // pages.data.allPodcasts.nodes.forEach(node => {
+  //   createPage({
+  //     path: `/admin/podcast/${node.id}`,
+  //     component: adminPodcast,
+  //     context: {
+  //       id: node.id,
+  //     },
   //   })
+  // })
 }
 
 exports.onCreatePage = async ({ page, actions }) => {

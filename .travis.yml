@@ -1,0 +1,38 @@
+language: node_js
+node_js:
+  - "10.14.2"
+
+cache: npm
+
+before_install:
+  - echo "NPM Install"
+
+install:
+  - npm ci
+  - npm install -g firebase-tools
+  - npm install -g gatsby-cli
+
+before_script:
+  - echo "NPM Installed"
+
+script:
+  - echo "Cleaning"
+  - gatsby clean
+  - echo "Building"
+  - GATSBY_ACTIVE_ENV=production gatsby build
+
+after_success:
+
+after_failure:
+
+after_script:
+
+before_deploy:
+  - echo "Deploying"
+
+deploy:
+  - firebase use production
+  - firebase deploy --token $FIREBASE_TOKEN
+
+after_deploy:
+  - echo "Deployed"

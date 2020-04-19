@@ -20,6 +20,9 @@ script:
   - gatsby clean
   - echo "Building"
   - GATSBY_ACTIVE_ENV=production gatsby build
+  - echo "Deploying"
+  - firebase use production
+  - firebase deploy --token $FIREBASE_TOKEN
 
 after_success:
 
@@ -28,11 +31,7 @@ after_failure:
 after_script:
 
 before_deploy:
-  - echo "Deploying"
 
 deploy:
-  - firebase use production
-  - firebase deploy --token $FIREBASE_TOKEN
 
 after_deploy:
-  - echo "Deployed"

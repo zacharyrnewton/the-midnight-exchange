@@ -44,7 +44,7 @@ export default ({ data }) => {
 
 export const pageQuery = graphql`
   query PodcastsQuery {
-    allPodcasts(sort: { order: DESC, fields: season, episode }) {
+    allPodcasts(sort: { order: [DESC, DESC], fields: [season, episode] }) {
       nodes {
         title
         tempUrl

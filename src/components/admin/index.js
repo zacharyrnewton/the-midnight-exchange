@@ -9,7 +9,7 @@ const AdminPodcasts = () => {
       <StaticQuery
         query={graphql`
           query AdminPodcastsQuery {
-            allPodcasts(sort: { order: DESC, fields: episode }) {
+            allPodcasts(sort: { order: DESC, fields: season, episode }) {
               nodes {
                 title
                 tempUrl

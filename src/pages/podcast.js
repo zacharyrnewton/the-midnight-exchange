@@ -36,6 +36,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title="Podcast" />
+      <h1>All Podcasts</h1>
       <Podcasts podcasts={podcasts} />
     </Layout>
   )

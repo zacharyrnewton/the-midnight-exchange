@@ -11,6 +11,7 @@ install:
   - npm ci
   - npm install -g firebase-tools
   - npm install -g gatsby-cli
+  - npm install -g tslint
 
 before_script:
   - echo "NPM Installed"

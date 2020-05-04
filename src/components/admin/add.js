@@ -3,6 +3,7 @@ import { Link, navigate } from "gatsby"
 import SEO from "../seo"
 import style from "../../sass/admin.module.sass"
 import firebase from "../../services/firebase-config"
+import Rte from "./add/rte"
 
 function add(event) {
   event.stopPropagation()
@@ -114,17 +115,6 @@ const AddPodcast = () => (
     <div className={style.contentWrapper}>
       <h1>Add Podcast</h1>
       <form className={style.podcastForm}>
-        {/* Audio Upload */}
-        <div className={style.addFile}>
-          <label htmlFor="podcastFile">Upload .mp3 file</label>
-          <input
-            type="file"
-            id="podcastFile"
-            name="podcastFile"
-            accept="audio/mpeg, audio/mpeg3, audio/mp4"
-          />
-        </div>
-        <progress id="uploader" value="0" max="100"></progress>
         {/* Title */}
         <div className={style.inputWrapper}>
           <label htmlFor="podcastName">Title</label>
@@ -139,19 +129,21 @@ const AddPodcast = () => (
         {/* Description or Shownotes */}
         <div className={style.inputWrapper}>
           <label htmlFor="podcastDescription">Description/Show Notes</label>
-          <textarea
-            id="podcastDescription"
-            name="podcastDescription"
-            rows="4"
-            placeholder="<p>Show notes must be in HTML format.</p>"
+          <Rte
+            id={"podcastDescription"}
+            name={"podcastDescription"}
+            className={style.rte}
+            editorClassName={"editorClassName"}
+            toolbarClassName={"toolbarClassName"}
+            placeholder={"Show Notes"}
             required
-          ></textarea>
+          />
         </div>
         {/* Explicit Flag */}
         <div className={style.inputWrapper}>
           <label htmlFor="podcastExplicit">Is this episode explicit?</label>
           <select id="podcastExplicit" name="podcastExplicit">
-            <option value="false" selected>
+            <option value="false" defaultValue>
               No
             </option>
             <option value="true">Yes</option>
@@ -191,6 +183,17 @@ const AddPodcast = () => (
             required
           />
         </div>
+        {/* Audio Upload */}
+        <div className={style.addFile}>
+          <label htmlFor="podcastFile">Upload .mp3 file</label>
+          <input
+            type="file"
+            id="podcastFile"
+            name="podcastFile"
+            accept="audio/mpeg, audio/mpeg3, audio/mp4"
+          />
+        </div>
+        <progress id="uploader" value="0" max="100"></progress>
         {/* Scheduled for Date */}
         {/*<div className={style.inputWrapper}>
           <label htmlFor="podcastSchedule">Schedule</label>

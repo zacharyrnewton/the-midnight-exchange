@@ -23,6 +23,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             use: loaders.null(),
           },
           {
+            test: /react-rte/,
+            use: loaders.null(),
+          },
+          {
             test: /\.css$/,
             loaders: ["style-loader", "css-loader?modules"],
           },

@@ -2,9 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import RichTextEditor from "react-rte"
 
-if (typeof document !== "undefined") {
-}
-class MyStatefulEditor extends Component {
+export default class MyStatefulEditor extends Component {
   static propTypes = {
     onChange: PropTypes.func,
   }
@@ -62,5 +60,3 @@ class MyStatefulEditor extends Component {
     )
   }
 }
-
-export default MyStatefulEditor

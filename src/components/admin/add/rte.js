@@ -22,6 +22,7 @@ class MyStatefulEditor extends Component {
     }
   }
   render() {
+    let { value } = this.state
     const toolbarConfig = {
       display: [
         "INLINE_STYLE_BUTTONS",
@@ -43,16 +44,20 @@ class MyStatefulEditor extends Component {
       <>
         <RichTextEditor
           toolbarConfig={toolbarConfig}
-          value={this.state.value}
+          value={value}
           onChange={this.onChange}
           placeholder={this.props.placeholder}
           className={this.props.className}
           editorClassName={this.props.editorClass}
           toolbarClassName={this.props.toolbarClassName}
-          id={this.props.id}
           name={this.props.name}
         />
-        <textarea className="source" placeholder="Editor Source" />
+        <textarea
+          id={this.props.id}
+          placeholder="Editor Source"
+          value={value.toString("html")}
+          readOnly
+        />
       </>
     )
   }

@@ -132,7 +132,6 @@ const AddPodcast = () => (
           <Rte
             id={"podcastDescription"}
             name={"podcastDescription"}
-            className={style.rte}
             editorClassName={"editorClassName"}
             toolbarClassName={"toolbarClassName"}
             placeholder={"Show Notes"}

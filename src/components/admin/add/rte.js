@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import RichTextEditor from "react-rte"
+import style from "../../../sass/components/rte.module.sass"
 
 export default class MyStatefulEditor extends Component {
   static propTypes = {
@@ -45,9 +46,9 @@ export default class MyStatefulEditor extends Component {
           value={value}
           onChange={this.onChange}
           placeholder={this.props.placeholder}
-          className={this.props.className}
-          editorClassName={this.props.editorClass}
-          toolbarClassName={this.props.toolbarClassName}
+          className={style.rte}
+          editorClassName={style.editor}
+          toolbarClassName={style.toolbar}
           name={this.props.name}
         />
         <textarea
@@ -55,6 +56,7 @@ export default class MyStatefulEditor extends Component {
           placeholder="Editor Source"
           value={value.toString("html")}
           readOnly
+          hidden
         />
       </>
     )

@@ -32,13 +32,12 @@ const AdminPodcasts = () => {
         render={data =>
           data.allPodcasts.nodes.map(podcast => {
             return (
-              <li>
+              <li key={podcast.id}>
                 <Link
                   to={"/admin/podcast/" + podcast.id}
-                  key={podcast.id}
                   className={style.adminPodcastListItemLink}
                 >
-                  <li className={style.adminPodcastListItem}>
+                  <div className={style.adminPodcastListItem}>
                     <h2 className={style.adminPodcastListItemTitle}>
                       {podcast.title}
                     </h2>
@@ -52,7 +51,7 @@ const AdminPodcasts = () => {
                       className={style.adminPodcastListItemExcerpt}
                       dangerouslySetInnerHTML={{ __html: podcast.description }}
                     />
-                  </li>
+                  </div>
                 </Link>
               </li>
             )

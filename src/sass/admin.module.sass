@@ -103,8 +103,6 @@ p.adminPodcastListItemExcerpt
     display: none
   p
     display: inline
-  
-
 
 // Add Page
 form.podcastForm
@@ -121,7 +119,6 @@ form.podcastForm
     border-radius: 4px
     overflow: hidden
     width: 100%
-
 
   progress::-webkit-progress-bar
     background-color: $light
@@ -147,6 +144,10 @@ form.podcastForm
         border-radius: 0 0 8px 8px
       &:only-of-type
         border-radius: 8px
+    select
+      height: 54px
+      border-radius: 8px
+      appearance: none
 
   .addFile
     position: relative
@@ -163,7 +164,6 @@ form.podcastForm
     text-align: center
     user-select: none
     label
-      // position: absolute
       top: 0
       right: 0
       bottom: 0
@@ -180,17 +180,12 @@ form.podcastForm
       &:active
         color: darken($light, 25%)
     input
-      // position: absolute
-      // opacity: 0
       z-index: 1
       cursor: pointer
       text-align: center
-      // margin: 20px 0 0 0
       color: $light
       &::-webkit-file-upload-button
         visibility: hidden
-
-
 
   button, a
     border-radius: 8px

@@ -39,14 +39,14 @@ exports.sourceNodes = async ({
   try {
     if (process.env.GATSBY_ACTIVE_ENV === "production") {
       firebase.initializeApp({
-        apiKey: "AIzaSyDTwoTFhhTqzzlRg-PhHx3ky1zIp6Epn_I",
-        authDomain: "the-midnight-exchange.firebaseapp.com",
-        databaseURL: "https://the-midnight-exchange.firebaseio.com",
-        projectId: "the-midnight-exchange",
-        storageBucket: "the-midnight-exchange.appspot.com",
-        messagingSenderId: "153446151275",
-        appId: "1:153446151275:web:569bd5141e4c91e8",
-        measurementId: "G-KK9TK915WM",
+        apiKey: "AIzaSyBE4iJmjOClOOvs2SwZucFj-kXVIKRWxvo",
+        authDomain: "tme---story-archives.firebaseapp.com",
+        databaseURL: "https://tme---story-archives.firebaseio.com",
+        projectId: "tme---story-archives",
+        storageBucket: "tme---story-archives.appspot.com",
+        messagingSenderId: "947430446605",
+        appId: "1:947430446605:web:f0f2b4a122c07df955e744",
+        measurementId: "G-XFNB15SQHW",
       })
     } else {
       firebase.initializeApp({

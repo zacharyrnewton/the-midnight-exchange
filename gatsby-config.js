@@ -28,7 +28,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `The Midnight Exchange`,
+        name: `Story Archives`,
         short_name: `THEME`,
         start_url: `/`,
         background_color: `#0F0F0F`,
@@ -64,71 +64,78 @@ module.exports = {
         feeds: [
           {
             // Channel Data
-            title: `The Midnight Exchange`,
+            title: `Story Archives`,
             generator: `The Midnight Exchange`,
             description: `It’s that at ease feeling you get when you’re out with friends, talking over drinks in that dimly lit lounge with the good music. It’s about approaching life with a sense of curiosity and expectation; diving into any subject that gets your attention. It’s about spending time, having conversations you’ll never forget. This—is The Midnight Exchange.`,
             // Need to update
             categories: [
               `Arts`,
             ],
-            site_url: `https://themidnightexchange.com/`,
-            feed_url: `https://themidnightexchange.com/podcast.xml`,
-            image_url: `https://themidnightexchange.com/images/channel/artwork.jpg`,
+            site_url: `${process.env.SITE_URL}`,
+            feed_url: `${process.env.SITE_URL}/podcast.xml`,
+            image_url: `${process.env.SITE_URL}/images/channel/artwork.jpg`,
             language: `en-US`,
-            copyright: `© 2020 The Midnight Exchange`,
+            copyright: `© 2020 Story Archives`,
             custom_namespaces: {
               itunes: `http://www.itunes.com/dtds/podcast-1.0.dtd`,
               googleplay: `http://www.google.com/schemas/play-podcasts/1.0`,
-              webfeeds:  `http://webfeeds.org/rss/1.0`,
+              webfeeds: `http://webfeeds.org/rss/1.0`,
             },
             custom_elements: [
-              { 'itunes:title': 'The Midnight Exchange'},
-              { 'itunes:subtitle': 'Having conversations you’ll never forget.'},
-              { 'itunes:type': 'episodic'},
-              { 'itunes:author': 'The Midnight Exchange' },
-              { 'itunes:owner': [
-                { 'itunes:name': 'The Midnight Exchange'},
-                { 'itunes:email': 'podcast@themidnightexchange.com'}
+              { 'itunes:title': 'Story Archives' },
+              { 'itunes:subtitle': 'Having conversations you’ll never forget.' },
+              { 'itunes:type': 'episodic' },
+              { 'itunes:author': 'Story Archives' },
+              {
+                'itunes:owner': [
+                  { 'itunes:name': 'Story Archives' },
+                  { 'itunes:email': 'podcast@themidnightexchange.com' }
                 ]
               },
-              { 'itunes:image': {
+              {
+                'itunes:image': {
                   _attr: {
-                    href: 'https://themidnightexchange.com/images/channel/artwork.jpg'
+                    href: `${process.env.SITE_URL}/images/channel/artwork.jpg`
                   }
                 }
               },
               { 'itunes:summary': 'It’s that at ease feeling you get when you’re out with friends, talking over drinks in that dimly lit lounge with the good music. It’s about approaching life with a sense of curiosity and expectation; diving into any subject that gets your attention. It’s about spending time, having conversations you’ll never forget. This—is The Midnight Exchange.' },
               { 'itunes:explicit': false },
               // Need to update
-              { 'itunes:category': [
-                {
-                  _attr: {
-                    text: 'Arts'
+              {
+                'itunes:category': [
+                  {
+                    _attr: {
+                      text: 'Arts'
+                    }
                   }
-                }
-              ]},
-              { 'googleplay:author': 'The Midnight Exchange' },
-              { 'googleplay:image': {
+                ]
+              },
+              { 'googleplay:author': 'Story Archives' },
+              {
+                'googleplay:image': {
                   _attr: {
-                    href: 'https://themidnightexchange.com/images/channel/artwork.jpg'
+                    href: `${process.env.SITE_URL}/images/channel/artwork.jpg`
                   }
                 }
               },
-              { 'webfeeds:cover': {
+              {
+                'webfeeds:cover': {
                   _attr: {
-                    image: 'https://themidnightexchange.com/images/channel/artwork.jpg'
+                    image: `${process.env.SITE_URL}/images/channel/artwork.jpg`
                   }
                 }
               },
-              { 'webfeeds:icon': 'https://themidnightexchange.com/images/channel/icon.jpg' },
-              { 'webfeeds:related': {
+              { 'webfeeds:icon': `${process.env.SITE_URL}/images/channel/icon.jpg` },
+              {
+                'webfeeds:related': {
                   _attr: {
                     layout: 'card',
                     target: 'browser'
                   }
                 }
               },
-              { 'webfeeds:logo': 'https://themidnightexchange.com/images/channel/logo.jpg' },
+              { 'webfeeds:logo': `${process.env.SITE_URL}/images/channel/logo.jpg` },
               { 'webfeeds:accentColor': 'CD6209' },
             ],
             query: `
@@ -158,7 +165,7 @@ module.exports = {
 
               const siteData = site.siteMetadata;
 
-              const showNotesFooter = `<br/><p><b>Find The Midnight Exchange online:<b/></p><ul><li><a href="https://twitter.com/THEMEpodcast">Twitter</a></li><li><a href="https://www.instagram.com/themidnightexchange/">Instagram</a></li><li><a href="https://www.facebook.com/themidnightexchange">Facebook</a></li><li><a href="https://themidnightexchange.com">themidnightexchange.com</a></li></ul><br /><p><b>Looking for Mario?</b><br /><a href="https://mbusto.com">mbusto.com</a></p><p><b>Looking for Zachary?</b><br /><a href="https://zacharynewton.me">zacharynewton.me</a></p>`;
+              const showNotesFooter = `<br/><p><b>Find Story Archives online:<b/></p><ul><li><a href="https://www.instagram.com/storyarchives/">Instagram</a></li></ul>`;
 
               return allPodcasts.edges.map(edge => {
 
@@ -172,26 +179,29 @@ module.exports = {
                   description: podcast.description + showNotesFooter,
                   url: podcast.tempUrl,
                   date: podcast.pubDate,
-                  enclosure: {url: podcast.tempUrl, type: podcast.podcastFileType, size: Math.round(podcast.podcastFileSize)},
+                  enclosure: { url: podcast.tempUrl, type: podcast.podcastFileType, size: Math.round(podcast.podcastFileSize) },
                   // link: 'this will be a link to the webpage it is on in the future',
                   pubDate: podcast.pubDate,
                   custom_elements: [
-                    { 'content:encoded': podcast.description + showNotesFooter},
+                    { 'content:encoded': podcast.description + showNotesFooter },
                     { 'itunes:title': podcast.title },
-                    { 'itunes:summary': podcast.description + showNotesFooter},
+                    { 'itunes:summary': podcast.description + showNotesFooter },
                     { 'itunes:episodeType': 'full' },
-                    { 'itunes:image': {
-                      _attr: {
-                        href: siteData.url + 'images/channel/artwork.jpg'
+                    {
+                      'itunes:image': {
+                        _attr: {
+                          href: `${process.env.SITE_URL}/images/channel/artwork.jpg`
+                        }
                       }
-                    }},
+                    },
                     { 'itunes:explicit': podcast.isExplicit },
                     { 'itunes:duration': Math.round(podcast.podcastDuration) },
                     { 'itunes:season': podcast.season },
                     { 'itunes:episode': podcast.episode },
-                    { 'webfeeds:cover': {
+                    {
+                      'webfeeds:cover': {
                         _attr: {
-                          image: 'https://themidnightexchange.com/images/channel/artwork.jpg'
+                          image: `${process.env.SITE_URL}/images/channel/artwork.jpg`
                         }
                       }
                     },
@@ -208,10 +218,10 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
-        exclude: [`/admin`,`/admin/*`,`/podcast`,`/login`],
+        exclude: [`/admin`, `/admin/*`, `/podcast`, `/login`],
       },
     },
-  
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

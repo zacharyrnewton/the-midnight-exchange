@@ -66,7 +66,7 @@ module.exports = {
             // Channel Data
             title: `Story Archives`,
             generator: `The Midnight Exchange`,
-            description: `It’s that at ease feeling you get when you’re out with friends, talking over drinks in that dimly lit lounge with the good music. It’s about approaching life with a sense of curiosity and expectation; diving into any subject that gets your attention. It’s about spending time, having conversations you’ll never forget. This—is The Midnight Exchange.`,
+            description: `Story Archives is a show about Entertainment, focusing on film and television. Episodes vary from general convos about relevant entertainment news, commentaries on television shows, and deep dive film reviews.`,
             // Need to update
             categories: [
               `Arts`,
@@ -83,7 +83,7 @@ module.exports = {
             },
             custom_elements: [
               { 'itunes:title': 'Story Archives' },
-              { 'itunes:subtitle': 'Having conversations you’ll never forget.' },
+              { 'itunes:subtitle': 'Story Archives is a show about Entertainment, focusing on film and television.' },
               { 'itunes:type': 'episodic' },
               { 'itunes:author': 'Story Archives' },
               {
@@ -99,7 +99,7 @@ module.exports = {
                   }
                 }
               },
-              { 'itunes:summary': 'It’s that at ease feeling you get when you’re out with friends, talking over drinks in that dimly lit lounge with the good music. It’s about approaching life with a sense of curiosity and expectation; diving into any subject that gets your attention. It’s about spending time, having conversations you’ll never forget. This—is The Midnight Exchange.' },
+              { 'itunes:summary': `Story Archives is a show about Entertainment, focusing on film and television. Episodes vary from general convos about relevant entertainment news, commentaries on television shows, and deep dive film reviews.` },
               { 'itunes:explicit': false },
               // Need to update
               {

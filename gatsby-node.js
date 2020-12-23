@@ -22,6 +22,14 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             test: /firebase/,
             use: loaders.null(),
           },
+          {
+            test: /react-rte/,
+            use: loaders.null(),
+          },
+          {
+            test: /\.css$/,
+            loaders: ["style-loader", "css-loader?modules"],
+          },
         ],
       },
     })
@@ -66,8 +74,8 @@ exports.sourceNodes = async ({
       .firestore()
       .collection("podcasts")
       .get()
-      .then(function(podcasts) {
-        podcasts.forEach(function(podcast) {
+      .then(function (podcasts) {
+        podcasts.forEach(function (podcast) {
           const podcastData = podcast.data()
           const podcastFileType = podcastData.podcastUrl
           console.log(podcastFileType)
@@ -75,7 +83,8 @@ exports.sourceNodes = async ({
           const node = {
             // Required Fields
             id: podcast.id,
-            parent: `Podcasts`,
+            parent: `Podcas
+            ts`,
             ...podcastData,
             internal: {
               type: `Podcasts`,

@@ -14,7 +14,7 @@ exports.writeToPodcasts = functions.firestore
         "Content-Type": "application/json",
         Accept: "application/json",
         "Travis-API-Version": "3",
-        Authorization: "token SXZfAiAvnGUX0i3syKZ4TA",
+        Authorization: "token fkl85-8EjBiFN88pl-yz3A",
       },
       body: JSON.stringify({
         branch: "master",
@@ -23,7 +23,7 @@ exports.writeToPodcasts = functions.firestore
     }
 
     fetch(
-      "https://api.travis-ci.org/repo/zacharyrnewton%2Fthe-midnight-exchange/requests",
+      "https://api.travis-ci.com/repo/zacharyrnewton%2Fthe-midnight-exchange/requests",
       options
     )
       .then(response => {

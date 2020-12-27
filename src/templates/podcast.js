@@ -2,7 +2,8 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/default-layout"
 import SEO from "../components/seo"
-import style from "../sass/admin.module.sass"
+// import style from "../sass/admin.module.sass"
+import style from "../sass/styles.css"
 
 const PodcastPage = ({ data }) => {
   const podcast = data.podcasts

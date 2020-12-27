@@ -1,9 +1,6 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://travis-ci.com/github/zacharyrnewton/the-midnight-exchange">
-    [![Build Status](https://travis-ci.com/zacharyrnewton/the-midnight-exchange.svg?branch=master)](https://travis-ci.com/zacharyrnewton/the-midnight-exchange)
-  </a>
-</p>
+[![Build Status](https://travis-ci.com/zacharyrnewton/the-midnight-exchange.svg?branch=master)](https://travis-ci.com/zacharyrnewton/the-midnight-exchange)
+
 <h1 align="center">
   Gatsby's default starter
 </h1>

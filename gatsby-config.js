@@ -15,7 +15,12 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
+    // {
+    //   resolve: `gatsby-plugin-sass`,
+    //   options: {
+    //     implementation: require("sass"),
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -30,6 +35,7 @@ module.exports = {
       options: {
         name: `Story Archives`,
         short_name: `THEME`,
+        lang: `en-US`,
         start_url: `/`,
         background_color: `#0F0F0F`,
         theme_color: `#EBE1CE`,
@@ -82,6 +88,7 @@ module.exports = {
               webfeeds: `http://webfeeds.org/rss/1.0`,
             },
             custom_elements: [
+
               { 'itunes:title': 'Story Archives' },
               { 'itunes:subtitle': 'Story Archives is a show about Entertainment, focusing on film and television.' },
               { 'itunes:type': 'episodic' },

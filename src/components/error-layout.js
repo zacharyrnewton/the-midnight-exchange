@@ -11,7 +11,8 @@ import PropTypes from "prop-types"
 import Navigation from "./navigation"
 import PodcastLinks from "./podcast-links"
 // import Particles from 'react-particles-js'
-import "../sass/config/config.sass"
+// import "../sass/config/config.sass"
+import "../sass/styles.css"
 
 const IndexLayout = ({ children }) => {
   // const data = useStaticQuery(graphql`

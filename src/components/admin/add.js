@@ -1,7 +1,8 @@
 import React from "react"
 import { Link, navigate } from "gatsby"
 import SEO from "../seo"
-import style from "../../sass/admin.module.sass"
+// import style from "../../sass/admin.module.sass"
+import style from "../../sass/styles.css"
 import firebase from "../../services/firebase-config"
 import Rte from "./add/rte"
 
@@ -58,13 +59,13 @@ function add(event) {
 
   // Update Database
   function updateDB() {
-    storageRef.getDownloadURL().then(function(url) {
+    storageRef.getDownloadURL().then(function (url) {
       const podcastUrl = url
 
       // Get File Type
       storageRef
         .getMetadata()
-        .then(function(metadata) {
+        .then(function (metadata) {
           const podcastFileType = metadata.contentType
           const podcastFileSize = metadata.size
 
@@ -89,7 +90,7 @@ function add(event) {
                 pubDate: pubDate,
               })
 
-              .then(function(docRef) {
+              .then(function (docRef) {
                 console.log("Document written with ID: ", docRef.id)
                 alert(
                   `Podcast Duration: ${podcastDuration} \n Podcast File Size: ${podcastFileSize} \n Podcast File Type: ${podcastFileType} \n Podcast Status: Uploaded Successfully!`
@@ -97,12 +98,12 @@ function add(event) {
                 navigate(/admin/)
               })
 
-              .catch(function(error) {
+              .catch(function (error) {
                 console.error("Error adding document: ", error)
               })
           })
         })
-        .catch(function(error) {
+        .catch(function (error) {
           console.log("Failed to get metadata")
         })
     })

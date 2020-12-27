@@ -83,8 +83,7 @@ exports.sourceNodes = async ({
           const node = {
             // Required Fields
             id: podcast.id,
-            parent: `Podcas
-            ts`,
+            parent: `Podcasts`,
             ...podcastData,
             internal: {
               type: `Podcasts`,

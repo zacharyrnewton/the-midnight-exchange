@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import RichTextEditor from "react-rte"
-import style from "../../../sass/components/rte.module.sass"
+// import style from "../../../sass/components/rte.module.sass"
+import style from "../../../sass/styles.css"
 
 export default class MyStatefulEditor extends Component {
   static propTypes = {

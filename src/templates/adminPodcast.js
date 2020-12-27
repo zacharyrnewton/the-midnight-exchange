@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import SEO from "../components/seo"
-import style from "../sass/admin.module.sass"
+// import style from "../sass/admin.module.sass"
+import style from "../sass/styles.css"
 // import firebase from "../services/firebase-config"
 import Layout from "../components/admin-layout"
 

@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  <a href="https://travis-ci.com/github/zacharyrnewton/the-midnight-exchange">
+    [![Build Status](https://travis-ci.com/zacharyrnewton/the-midnight-exchange.svg?branch=master)](https://travis-ci.com/zacharyrnewton/the-midnight-exchange)
   </a>
 </p>
 <h1 align="center">

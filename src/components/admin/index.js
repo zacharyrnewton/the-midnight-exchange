@@ -1,7 +1,8 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import SEO from "../seo"
-import style from "../../sass/admin.module.sass"
+// import style from "../../sass/admin.module.sass"
+import style from "../../sass/styles.css"
 
 const AdminPodcasts = () => {
   return (

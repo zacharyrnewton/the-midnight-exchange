@@ -1,4 +1,3 @@
-// const path = require(`path`)
 const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
 require("dotenv").config({
   path: `.env.${activeEnv}`,
@@ -81,7 +80,7 @@ module.exports = {
             feed_url: `${process.env.SITE_URL}/podcast.xml`,
             image_url: `${process.env.SITE_URL}/images/channel/artwork.jpg`,
             language: `en-US`,
-            copyright: `© 2020 Story Archives`,
+            copyright: `© 2021 Story Archives`,
             custom_namespaces: {
               itunes: `http://www.itunes.com/dtds/podcast-1.0.dtd`,
               googleplay: `http://www.google.com/schemas/play-podcasts/1.0`,

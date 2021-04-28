@@ -3,7 +3,7 @@ import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 
 const PodcastLinks = ({ siteTitle }) => (
   <div className="podcast-links">
-    <a href="https://podcasts.apple.com/us/podcast/the-midnight-exchange/id1500209456" target="_blank" rel="noopener noreferrer" className="icon-link" aria-label="Apple Podcasts"
+    {/* <a href="https://podcasts.apple.com/us/podcast/the-midnight-exchange/id1500209456" target="_blank" rel="noopener noreferrer" className="icon-link" aria-label="Apple Podcasts"
       onClick={e => {
         // e.preventDefault()
         trackCustomEvent({
@@ -51,7 +51,7 @@ const PodcastLinks = ({ siteTitle }) => (
       }}
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"><g transform="translate(-906 -970)"><circle cx="23" cy="23" r="23" transform="translate(906 970)" fill="#ebe1ce" opacity="0"/><path d="M16.213,8A16.213,16.213,0,1,0,32.426,24.213,16.219,16.219,0,0,0,16.213,8ZM22.8,31.856a1.247,1.247,0,0,1-.7-.235c-4.079-2.458-8.826-2.563-13.513-1.6a4.221,4.221,0,0,1-.778.17,1.018,1.018,0,0,1-1.033-1.033,1.036,1.036,0,0,1,.889-1.1c5.354-1.183,10.826-1.079,15.494,1.713a1.106,1.106,0,0,1,.634,1.079.988.988,0,0,1-.994,1.007Zm1.759-4.289a1.614,1.614,0,0,1-.8-.275,21.186,21.186,0,0,0-15.6-1.922,2.693,2.693,0,0,1-.778.17,1.269,1.269,0,0,1-1.268-1.268,1.286,1.286,0,0,1,1.013-1.353,21.989,21.989,0,0,1,6.394-.889A22.885,22.885,0,0,1,25.085,25a1.363,1.363,0,0,1,.739,1.288A1.267,1.267,0,0,1,24.555,27.567Zm2.027-4.982a1.5,1.5,0,0,1-.843-.255c-4.655-2.778-12.977-3.445-18.364-1.942a3.105,3.105,0,0,1-.843.17,1.509,1.509,0,0,1-1.523-1.543,1.545,1.545,0,0,1,1.138-1.562,27.4,27.4,0,0,1,7.682-.994c4.772,0,9.774.994,13.428,3.125a1.535,1.535,0,0,1,.843,1.477,1.515,1.515,0,0,1-1.517,1.523Z" transform="translate(913.001 969)" fill="#ebe1ce"/></g></svg>
-    </a>
+    </a> */}
     <a href="/podcast.xml" className="icon-link" rel="alternate" type="application/rss+xml" aria-label="RSS Feed"
       onClick={e => {
         // e.preventDefault()

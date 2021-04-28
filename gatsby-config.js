@@ -81,7 +81,7 @@ module.exports = {
             feed_url: `https://themidnightexchange.com/podcast.xml`,
             image_url: `https://themidnightexchange.com/images/channel/artwork.jpg`,
             language: `en-US`,
-            copyright: `© 2020 The Midnight Exchange`,
+            copyright: `© 2021 The Midnight Exchange`,
             custom_namespaces: {
               itunes: `http://www.itunes.com/dtds/podcast-1.0.dtd`,
               googleplay: `http://www.google.com/schemas/play-podcasts/1.0`,
